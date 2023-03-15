@@ -24,17 +24,19 @@ const Image = styled.img`
   object-fit: fill;
   pointer-events: none;
 `;
-
 export default class LazyLoad extends Component {
   render() {
     const settings = {
       dots: true,
-      lazyLoad: false,
+      lazyLoad: true,
       infinite: true,
-      speed: 200,
+      speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 2,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
     };
     return (
       <Container>
@@ -42,13 +44,6 @@ export default class LazyLoad extends Component {
           <ImageArea>
             <Image src={foto1} />
           </ImageArea>
-          {/* <ImageArea>
-            <Image
-              src={
-                "https://www.fastems.com/wp-content/uploads/2021/08/AdobeStock_172041052-scaled.jpeg"
-              }
-            />
-          </ImageArea> */}
           <ImageArea>
             <Image src={foto2} />
           </ImageArea>

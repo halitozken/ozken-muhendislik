@@ -6,7 +6,7 @@ import { GrMail } from "react-icons/gr";
 
 const Container = styled.div`
   width: 100%;
-  height: 34vh;
+
   background-color: #323232;
   color: white;
   font-weight: 300;
@@ -16,14 +16,11 @@ const Area = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-
-const Right = styled.div`
-  flex: 1;
+const Left = styled.div`
   padding: 20px;
 `;
 
-const Left = styled.div`
-  flex: 3;
+const Right = styled.div`
   padding: 20px;
 `;
 
@@ -34,38 +31,41 @@ const ContactItem = styled.div`
 
 const List = styled.ul`
   list-style-type: none;
-  margin-bottom: 20px;
 `;
 
 const ListItem = styled.li`
   margin-bottom: 10px;
+  font-size: 18px;
 `;
 
 const Title = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid white;
 `;
 
-const Copyright = styled.p`
+const Copyright = styled.div`
   text-align: center;
-  padding-bottom: 10px;
 `;
 
-const Text = styled.h1``;
+const Text = styled.h3`
+  margin-left: 40px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid white;
+`;
 
 const Footer = () => {
   return (
     <Container>
       <Area>
         <Left>
-          <Text>Özken Mühendislik</Text>
-          {/* <List>
-            <ListItem>Anasayfa</ListItem>
-            <ListItem>Hakkımızda</ListItem>
-            <ListItem>Projeler</ListItem>
-            <ListItem>Hizmetlerimiz</ListItem>
-            <ListItem>Galeri</ListItem>
-            <ListItem>İletişim</ListItem>
-          </List> */}
+          <Text>Hizmetlerimiz</Text>
+          <List>
+            <ListItem>Cnc İşleme</ListItem>
+            <ListItem>Torna</ListItem>
+            <ListItem>Freeze</ListItem>
+            <ListItem>Dokuma Makineleri</ListItem>
+            <ListItem>Bakım, Onarım ve Kurulum</ListItem>
+          </List>
         </Left>
         <Right>
           <Title>İletişim</Title>
