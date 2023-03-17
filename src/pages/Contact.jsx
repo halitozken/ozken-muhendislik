@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 
 const Container = styled.div`
   width: 100%;
@@ -97,12 +98,13 @@ const Contact = () => {
     <Container>
       <Headline />
       <Navbar />
+      <Menu />
       <ContactInfo>
         <Left>
           <Address>
             <Header>İletişim:</Header>
             <Text>Duaçınarı Mh.</Text>
-            <Text>Uslu Sk. No:1 </Text>
+            <Text>Uslu Çk. No:1 </Text>
             <Text>Yıldırım / Bursa</Text>
             <Text>Telefon: +90 224 363 83 15</Text>
             <Text>info@ozkenmuhendislik.com</Text>

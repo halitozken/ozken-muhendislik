@@ -6,10 +6,12 @@ import { GrMail } from "react-icons/gr";
 
 const Container = styled.div`
   width: 100%;
-
-  background-color: #323232;
+  height: auto;
+  background-color: #111111;
   color: white;
-  font-weight: 300;
+  font-weight: 400;
+  padding-top: 24px;
+  padding-bottom: 12px;
 `;
 
 const Area = styled.div`
@@ -25,8 +27,10 @@ const Right = styled.div`
 `;
 
 const ContactItem = styled.div`
+  font-size: 14px;
   margin-bottom: 20px;
   letter-spacing: 1px;
+  color: #c7c7c7;
 `;
 
 const List = styled.ul`
@@ -35,7 +39,8 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin-bottom: 10px;
-  font-size: 18px;
+  color: #c7c7c7;
+  font-size: 14px;
 `;
 
 const Title = styled.h3`
@@ -44,7 +49,11 @@ const Title = styled.h3`
 `;
 
 const Copyright = styled.div`
+  border-top: 1px solid #c7c7c771;
+  font-size: 12px;
+  padding-top: 12px;
   text-align: center;
+  color: #c7c7c7;
 `;
 
 const Text = styled.h3`
@@ -71,7 +80,7 @@ const Footer = () => {
           <Title>İletişim</Title>
           <ContactItem>
             <ImLocation style={{ marginRight: "10px" }} />
-            Duaçınarı Mh. Uslu Sk. No: 1 Yıldırım / Bursa
+            Duaçınarı Mh. Uslu Çk. No: 1 Yıldırım / Bursa
           </ContactItem>
           <ContactItem>
             <BsFillTelephoneFill style={{ marginRight: "10px" }} />
@@ -79,14 +88,11 @@ const Footer = () => {
           </ContactItem>
           <ContactItem>
             <GrMail style={{ marginRight: "10px" }} />
-            ozkenmuhendislik@gmail.com
+            info@ozkenmuhendislik.com
           </ContactItem>
         </Right>
       </Area>
-      <Copyright>
-        Copyright © 2023 Özken Mühendislik.
-        <br /> All Right Reserved by ozken software
-      </Copyright>
+      <Copyright>Copyright © 2023 Özken Mühendislik.</Copyright>
     </Container>
   );
 };

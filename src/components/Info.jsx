@@ -1,29 +1,39 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { BoxContext } from "./Context";
+import { BoxContext } from "../Context";
 import { Visibility } from "material-ui-icons";
+import { mobile } from "../responsive";
+
+const InfoArea = styled.div`
+width: 100%;
+height: auto;
+background-color:e8e8e88d;
+display:flex;
+justify-content: center
+align-items: center;
+margin-left: 32px;
+`;
 
 const Container = styled.div`
   width: 100%;
-  height: 65vh;
-  background-color: #f8f8f8;
-  display: flex;
+  height: auto;
+  padding-top: 40px;
+  display:flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin-top: 25px;
   margin-bottom: 45px;
   transition: all 1s
+  
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+    ${mobile({ flexDirection: "Column", height: " 135vh" })}
 `;
+
 const Image = styled.img`
-  width: 350px;
-  height: 200px;
-  padding: 50px;
-  display: flex;
-  align-items: center;
-  transition: all 1s;
+  width: 22%;
+  height: auto;
+  ${mobile({ width: "280px", padding: "0px" })}
 `;
 const Header = styled.h2`
   padding-left: 94px;
@@ -32,16 +42,19 @@ const Header = styled.h2`
 `;
 
 const TextArea = styled.div`
-  width: 75%;
-  height: 100%;
+  width: 85%;
+  height: auto;
   transition: all 1s;
+  ${mobile({ width: "100%" })}
 `;
 const Text = styled.p`
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
   inline-size: 85%;
   transition: all 1s;
+
+  ${mobile({ fontSize: "18px" })}
 `;
 
 const Info = () => {
@@ -50,7 +63,7 @@ const Info = () => {
   const box = context.selectedBox;
 
   return (
-    <>
+    <InfoArea>
       <Container id="cncBox" style={{ display: box === "cnc" ? true : "none" }}>
         <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_isleme.png?format=webp&width=1400&rmode=min" />
         <TextArea>
@@ -59,15 +72,15 @@ const Info = () => {
             CNC işleme teknolojisi, bilgisayar kontrollü eksenler aracılığıyla
             hareket ettirilen ve kesici takımlar ile iş parçasından talaş
             kaldırılarak şekillendirme yapan bir talaşlı imalat yöntemidir.
-            <br></br>
+            {/* <br></br>
             <br></br>
             CNC işleme ile üretim basitçe birkaç aşamadan oluşur: İlk adım, elde
             edilmek istenen modelin, iş parçasından nasıl bir işlem sırası ve
             hangi yöntemler ile elde edileceğini belirleyen programlama ve CAM
             dosyası oluşturma adımıdır. Bu aşamada kısaca kesici takımın dönme
             hızı, motor gücü ve kesici takımların izleyeceği yol gibi detaylar
-            belirlenir.
-            <br></br>
+            belirlenir. */}
+            {/* <br></br>
             <br></br>
             Bu aşamadan sonra, iş parçasının makineye bağlanmasını
             kolaylaştıracak tutucu aparatlar parçaya göre hazırlanır veya
@@ -80,7 +93,7 @@ const Info = () => {
             hassasiyet ve tekrarlanabilirliğe sahip mekanik parçalar
             üretebilmenize olanak tanır. Orta aşama prototiplemeden son ürün
             kullanımına kadar birçok üretim ihtiyacını adet sınırı olmadan
-            karşılayabileceğiniz talaşlı imalat yöntemidir.
+            karşılayabileceğiniz talaşlı imalat yöntemidir. */}
           </Text>
         </TextArea>
       </Container>
@@ -99,7 +112,7 @@ const Info = () => {
             hareket eden kesici takım aracılığı ile talaş kaldırma işlemine
             tornalama denir. Tornalama işleminin yapıldığı tezgâha torna tezgâhı
             ya da bilinen ve kısa ismiyle torna adı verilir.
-            <br></br>
+            {/* <br></br>
             <br></br>
             Torna tezgâhları pek çok işlemede kullanılır; ağaç tornalama, metal
             işleme, metal sıvama, termal püskürtme ya da cam işleme gibi
@@ -118,7 +131,7 @@ const Info = () => {
             biri farklı iş parçası uzunluklarına uyum sağlamak için genelde
             yatay hareket ettirilir. İş parçası torna aynası veya pens
             kullanılarak veya kelepçelerle veya dog clutch’ı kullanılıp
-            sabitlenerek de dönme ekseni etrafında döndürülebilir.
+            sabitlenerek de dönme ekseni etrafında döndürülebilir. */}
           </Text>
         </TextArea>
       </Container>
@@ -143,7 +156,7 @@ const Info = () => {
           </Text>
         </TextArea>
       </Container>
-    </>
+    </InfoArea>
   );
 };
 

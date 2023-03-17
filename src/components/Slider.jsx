@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 import foto1 from "../images/foto1.jpeg";
 import foto2 from "../images/foto2.jpeg";
@@ -11,23 +12,25 @@ import foto4 from "../images/foto4.jpeg";
 
 const Container = styled.div`
   width: 100%;
-  margin-top: 24px;
-  padding-top: 4px;
   background-color: #f8f8f8;
+
+  ${mobile({ height: "40vh", paddingTop: "0px", marginTop: "24px" })}
 `;
 const ImageArea = styled.div``;
 
 const Image = styled.img`
-  width: 75%;
-  height: 80vh;
+  width: 70%;
+  height: 75vh;
   margin: auto;
   object-fit: fill;
   pointer-events: none;
+  ${mobile({ width: "100%", height: "40vh" })}
 `;
+
 export default class LazyLoad extends Component {
   render() {
     const settings = {
-      dots: true,
+      dots: false,
       lazyLoad: true,
       infinite: true,
       speed: 500,
@@ -42,7 +45,7 @@ export default class LazyLoad extends Component {
       <Container>
         <Slider {...settings}>
           <ImageArea>
-            <Image src={foto1} />
+            <Image src={foto1}></Image>
           </ImageArea>
           <ImageArea>
             <Image src={foto2} />

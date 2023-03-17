@@ -2,45 +2,43 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../2.png";
 import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { GrMail } from "react-icons/gr";
 
 const Container = styled.div`
   width: 100%;
-  height: 114px;
+  height: 124px;
   /* background-color: #f8f8f8; */
-  background: rgb(59, 59, 59);
+  /* background: rgb(59, 59, 59);
   background: linear-gradient(
     180deg,
     rgba(59, 59, 59, 1) 0%,
     rgba(248, 248, 248, 1) 5%
-  );
+  ); */
+  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  ${mobile({ flexDirection: "Column", height: "142px;" })}
 `;
 
-const Logo = styled.img`
-  /* font-size: 34px;
+const Logo = styled.div`
+  font-size: 28px;
   font-weight: 600;
-  color: black; */
-  width: 275px;
-  height: 250px;
-  cursor: pointer;
-`;
-
-const Right = styled.div``;
-
-const MenuItem = styled.a`
-  font-size: 18px;
-  font-weight: 600;
-  padding: 12px;
   color: black;
-  transition: all 0.5s;
-  &:hover {
-    border-bottom: 2px solid black;
-    box-shadow: rgba(0, 0, 0, 0.447) 0px 20px 30px -10px;
-    /* transition: all 0.25s; */
-  }
+
+  cursor: pointer;
+  /* ${mobile({ width: "120px", height: "120px" })} */
+`;
+
+const Right = styled.div`
+  /* ${mobile({ flexDirection: "column" })} */
+  display:flex;
+  align-items:center;
+  font-weight: 500;
 `;
 
 const LogoLink = styled.a``;
@@ -50,48 +48,18 @@ const Navbar = () => {
     <>
       <Container>
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <Logo src={logo} />
+          <Logo>Özken Mühendislik</Logo>
         </Link>
 
         <Right>
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <MenuItem>Anasayfa</MenuItem>
-          </Link>
-
-          <Link
-            to="/hakkimizda"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>Hakkımızda</MenuItem>
-          </Link>
-
-          {/* <Link
-            to="/projeler"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>Projeler</MenuItem>
-          </Link> */}
-
-          <Link
-            to="/hizmetler"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>Projeler</MenuItem>
-          </Link>
-
-          {/* <Link
-            to="/galeri"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>Galeri</MenuItem>
-          </Link> */}
-
-          <Link
-            to="/iletisim"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem>İletişim</MenuItem>
-          </Link>
+          <BsFillTelephoneFill
+            style={{ fontSize: "18px", marginRight: "8px" }}
+          />
+          +90 224 363 83 15
+          <GrMail
+            style={{ fontSize: "20px", marginLeft: "18px", marginRight: "8px" }}
+          />
+          info@ozkenmuhendislik.com
         </Right>
       </Container>
     </>
