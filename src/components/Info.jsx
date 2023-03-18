@@ -3,15 +3,18 @@ import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { Visibility } from "material-ui-icons";
 import { mobile } from "../responsive";
+import freze from "../images/freze.png";
 
 const InfoArea = styled.div`
-width: 100%;
+width: 150%;
 height: auto;
-background-color:e8e8e88d;
+background-color: e8e8e88d;
 display:flex;
 justify-content: center
 align-items: center;
 margin-left: 32px;
+${mobile({ display: "none" })}
+
 `;
 
 const Container = styled.div`
@@ -27,13 +30,13 @@ const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 
-    ${mobile({ flexDirection: "Column", height: " 135vh" })}
 `;
 
 const Image = styled.img`
   width: 22%;
   height: auto;
-  ${mobile({ width: "280px", padding: "0px" })}
+
+  ${mobile({ display: "none" })}
 `;
 const Header = styled.h2`
   padding-left: 94px;
@@ -45,7 +48,13 @@ const TextArea = styled.div`
   width: 85%;
   height: auto;
   transition: all 1s;
-  ${mobile({ width: "100%" })}
+
+  ${mobile({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  })}
 `;
 const Text = styled.p`
   font-size: 20px;
@@ -53,8 +62,6 @@ const Text = styled.p`
   letter-spacing: 1px;
   inline-size: 85%;
   transition: all 1s;
-
-  ${mobile({ fontSize: "18px" })}
 `;
 
 const Info = () => {
@@ -135,8 +142,8 @@ const Info = () => {
           </Text>
         </TextArea>
       </Container>
-      <Container style={{ display: "none" }}>
-        <Image src="https://cdn.tridi.co/blog-gallery/cncislemenedir.jpeg?format=webp&width=1400&rmode=min" />
+      <Container style={{ display: box === "freze" ? true : "none" }}>
+        <Image src={freze} />
         <TextArea>
           <Header>Freze nedir, ne işe yarar?</Header>
           <Text>
@@ -146,13 +153,7 @@ const Info = () => {
             parça üreten her işletmede freze tezgâhı görmek mümkün. Freze
             makinelerinin 19. yüzyılda hayatımıza girmiş olsa da teknolojik
             gelişmeler ile günümüzde artık çok daha gelişmiş bir halde karşımıza
-            çıkıyor. Yeni teknolojiler ile frezeler artık yerini CNC freze
-            tezgâhı bırakmış gibi görünüyor. Ayrıca bilgisayarlar ve özel
-            programlar yardımı ile artık tamamen otomatik olarak da imalat
-            yapılabilmesi mümkün. Günümüzde torna freze, dikey freze, CNC freze
-            tezgâhı, üniversal freze tezgâhı, kopya freze tezgâhı gibi pek çok
-            “tezgâhtan bahsetmek mümkün. Gelin önce freze nedir, freze ne işe
-            yarar bununla başlayalım yazımıza…
+            çıkıyor.
           </Text>
         </TextArea>
       </Container>

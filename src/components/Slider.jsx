@@ -14,7 +14,7 @@ const Container = styled.div`
   width: 100%;
   background-color: #f8f8f8;
 
-  ${mobile({ height: "40vh", paddingTop: "0px", marginTop: "24px" })}
+  ${mobile({ height: "38vh" })}
 `;
 const ImageArea = styled.div``;
 

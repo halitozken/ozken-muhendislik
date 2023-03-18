@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ImLocation } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -17,9 +18,11 @@ const Container = styled.div`
 const Area = styled.div`
   display: flex;
   justify-content: space-around;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const Right = styled.div`

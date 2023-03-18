@@ -23,7 +23,7 @@ const Left = styled.div`
 const Headline = () => {
   return (
     <Container>
-      <Left>Duaçınarı Mh. Uslu Sk. No:1 Yıldırım / Bursa</Left>
+      <Left>Duaçınarı Mh. Uslu Çk. No:1 Yıldırım / Bursa</Left>
     </Container>
   );
 };

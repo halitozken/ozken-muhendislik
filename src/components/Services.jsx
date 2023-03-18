@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
 import Info from "./Info";
+import freze from "../images/freze.png";
 
 const ServicesArea = styled.div`
   width: 100%;
-  height: 65vh;
+  height: 75vh;
   background-color: #ffffff;
+  ${mobile({ height: "auto" })}
 `;
 
 const Container = styled.div`
@@ -16,18 +18,20 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Head = styled.h1`
-  color: #f0542d;
+  color: #0086bc;
   text-align: center;
   padding: 32px 54px;
   text-decoration-line: underline;
 `;
 
 const Box = styled.div`
-  width: 74%;
-  height: 6vh;
+  width: 54%;
+  height: 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,22 +44,21 @@ const Box = styled.div`
   transition: all 0.2s;
 
   &:hover {
-    background-color: #f0542d;
+    background-color: #0086bc;
     color: white;
   }
 
   &:active {
-    background-color: #f0542d83;
+    background-color: #0084ff8b;
     color: white;
   }
 
-  ${mobile({ height: "12vh" })}
+  ${mobile({ width: "65%", height: "10px" })}
 `;
 
 const Image = styled.img`
-  width: 45%;
+  width: 25%;
   pointer-events: none;
-  ${mobile({ height: "8vh" })}
 `;
 
 const Title = styled.h2`
@@ -89,6 +92,15 @@ const Services = () => {
           >
             <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min"></Image>
             <Title>Torna</Title>
+          </Box>
+          <Box
+            className="freze"
+            onClick={(e) =>
+              context.choosenBox(e.target.className.split(" ")[2])
+            }
+          >
+            <Image src={freze}></Image>
+            <Title>Freze</Title>
           </Box>
         </BoxArea>
 

@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import cnc from "../images/cnc.png";
+import { Link } from "react-router-dom";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
   height: 75vh;
   background-color: #ffffff;
   display: flex;
+
+  ${mobile({ height: "60vh" })}
 `;
 
 const AboutArea = styled.div`
@@ -19,30 +23,29 @@ const Left = styled.div`
   width: 35%;
   height: 55%;
   padding-bottom: 25px;
-
-  padding-bottom: 12px;
 `;
+
 const Right = styled.div`
   width: 35%;
 `;
 const Header = styled.h5`
   padding-bottom: 25px;
-  color: #f0542d;
+  color: #0086bc;
 `;
+
 const Text = styled.div`
   font-size: 20px;
   padding-bottom: 25px;
+  ${mobile({ fontSize: "16px" })}
 `;
+
 const Button = styled.button`
   color: white;
   border: 1px orange;
   border-radius: 24%;
   padding: 22px;
-
-  /* CSS */
-
   align-items: center;
-  background-color: #f0542d;
+  background-color: #0086bc;
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
@@ -75,7 +78,7 @@ const Button = styled.button`
 
   &:hover,
   &:focus {
-    background-color: #f0542da6;
+    background-color: #0086bc;
     color: #ffffff;
   }
 
@@ -92,12 +95,17 @@ const Button = styled.button`
 `;
 
 const Title = styled.h1`
+  ${mobile({ fontSize: "22px" })}
   padding-bottom: 25px;
 `;
+
 const Image = styled.img`
   width: 100%;
   height: 45vh;
+
+  ${mobile({ height: "26vh" })}
 `;
+
 const AboutUs = () => {
   return (
     <Container>
@@ -107,10 +115,14 @@ const AboutUs = () => {
           <Title>Özken Mühendislik</Title>
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-            eiusmod tempor incididunt utlabore et dolore magna aliqua. Minimum
-            reklam kullanın
+            eiusmod tempor incididunt utlabore et dolore magna aliqua.
           </Text>
-          <Button>BİZE ULAŞIN</Button>
+          <Link
+            to="/iletisim"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Button>BİZE ULAŞIN</Button>
+          </Link>
         </Left>
         <Right>
           <Image src={cnc} />

@@ -22,7 +22,7 @@ const Container = styled.div`
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-  ${mobile({ flexDirection: "Column", height: "142px;" })}
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Logo = styled.div`
@@ -31,7 +31,6 @@ const Logo = styled.div`
   color: black;
 
   cursor: pointer;
-  /* ${mobile({ width: "120px", height: "120px" })} */
 `;
 
 const Right = styled.div`
@@ -39,6 +38,8 @@ const Right = styled.div`
   display:flex;
   align-items:center;
   font-weight: 500;
+
+  ${mobile({ fontSize: "14px" })}
 `;
 
 const LogoLink = styled.a``;

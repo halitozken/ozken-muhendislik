@@ -4,15 +4,19 @@ import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
+  height: "auto" ${mobile({ height: "auto" })};
 `;
 
 const ContactInfo = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+
+  ${mobile({ height: "auto", flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -22,6 +26,7 @@ const Left = styled.div`
   align-items: center;
   font-weight: 300;
   font-size: 24px;
+  ${mobile({ fontSize: "18px", paddingTop: "25px" })}
 `;
 
 const Right = styled.div`
@@ -29,11 +34,15 @@ const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${mobile({ fontSize: "20px", width: "100%" })}
 `;
 
 const Address = styled.div``;
 
-const Header = styled.h1``;
+const Header = styled.h1`
+  ${mobile({ fontSize: "20px" })}
+`;
 
 const Text = styled.p`
   font-weight: 400;
@@ -41,7 +50,14 @@ const Text = styled.p`
   letter-spacing: 2px;
 `;
 
-const Form = styled.form``;
+const Form = styled.form`
+  ${mobile({
+    fontSize: "10px",
+    width: "auto",
+    height: "auto",
+    paddingTop: "42px",
+  })}
+`;
 
 const Input = styled.input`
   width: 150%;
@@ -56,6 +72,8 @@ const Input = styled.input`
   &:hover {
     font-weight: bold;
   }
+
+  ${mobile({ fontSize: "18px", width: "100%" })}
 `;
 
 const Button = styled.button`
@@ -75,7 +93,10 @@ const Button = styled.button`
   }
 `;
 const FormHeader = styled.h1`
+  color:#F0542D
   margin: 10px;
+
+  ${mobile({ textAlign: "center" })}
 `;
 
 const TextArea = styled.textarea`
@@ -91,6 +112,8 @@ const TextArea = styled.textarea`
   &:hover {
     font-weight: bold;
   }
+
+  ${mobile({ fontSize: "18px", width: "100%" })}
 `;
 
 const Contact = () => {
