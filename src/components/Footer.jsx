@@ -20,7 +20,7 @@ const Area = styled.div`
   justify-content: space-around;
   ${mobile({ flexDirection: "column" })}
 `;
-const Left = styled.div`
+const Center = styled.div`
   padding: 20px;
   ${mobile({ display: "none" })}
 `;
@@ -65,11 +65,23 @@ const Text = styled.h3`
   border-bottom: 1px solid white;
 `;
 
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Logo = styled.h2`
+  border-bottom: 1px solid white;
+`;
+
 const Footer = () => {
   return (
     <Container>
       <Area>
         <Left>
+          <Logo>Özken Mühendislik</Logo>
+        </Left>
+        <Center>
           <Text>Hizmetlerimiz</Text>
           <List>
             <ListItem>Cnc İşleme</ListItem>
@@ -78,7 +90,7 @@ const Footer = () => {
             <ListItem>Dokuma Makineleri</ListItem>
             <ListItem>Bakım, Onarım ve Kurulum</ListItem>
           </List>
-        </Left>
+        </Center>
         <Right>
           <Title>İletişim</Title>
           <ContactItem>

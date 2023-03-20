@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const ContactInfo = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
 
   ${mobile({ height: "auto", flexDirection: "column" })}
@@ -51,6 +51,12 @@ const Text = styled.p`
 `;
 
 const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding-top: 25px;
   ${mobile({
     fontSize: "10px",
     width: "auto",
@@ -60,7 +66,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  width: 150%;
+  width: 20%;
   padding: 12px 16px;
   margin: 10px;
   font-weight: 500;
@@ -73,7 +79,7 @@ const Input = styled.input`
     font-weight: bold;
   }
 
-  ${mobile({ fontSize: "18px", width: "100%" })}
+  ${mobile({ fontSize: "18px", width: "300px" })}
 `;
 
 const Button = styled.button`
@@ -100,7 +106,7 @@ const FormHeader = styled.h1`
 `;
 
 const TextArea = styled.textarea`
-  width: 150%;
+  width: 20%;
   padding: 12px 16px;
   margin: 10px;
   font-weight: 500;
@@ -113,7 +119,22 @@ const TextArea = styled.textarea`
     font-weight: bold;
   }
 
-  ${mobile({ fontSize: "18px", width: "100%" })}
+  ${mobile({ fontSize: "18px", width: "300px" })}
+`;
+
+const Map = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${mobile({ paddingTop: "25px", paddingBottom: "25px" })}
+`;
+
+const Iframe = styled.iframe`
+  width: 600;
+  height: 450;
+
+  ${mobile({ width: "350px", height: "350px" })}
 `;
 
 const Contact = () => {
@@ -134,28 +155,36 @@ const Contact = () => {
           </Address>
         </Left>
         <Right>
-          <Form>
-            <FormHeader>Bizimle iletişime geçin...</FormHeader>
-            <Input type="text" name="fname" placeholder="Ad"></Input>
-            <br />
-
-            <Input type="text" name="lname" placeholder="Soyad"></Input>
-            <br />
-
-            <Input type="text" name="mail" placeholder="Mail"></Input>
-            <br />
-
-            <TextArea
-              name="message"
-              placeholder="Mesajınız yazın..."
-              rows="5"
-            ></TextArea>
-            <br />
-
-            <Button type="submit">Gönder</Button>
-          </Form>
+          <Map>
+            <Iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d190.4813629688114!2d29.095887821882023!3d40.193449150662026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1679248099107!5m2!1str!2str"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></Iframe>
+          </Map>
         </Right>
       </ContactInfo>
+      <Form>
+        <FormHeader>Bizimle iletişime geçin...</FormHeader>
+        <Input type="text" name="fname" placeholder="Ad"></Input>
+        <br />
+
+        <Input type="text" name="lname" placeholder="Soyad"></Input>
+        <br />
+
+        <Input type="text" name="mail" placeholder="Mail"></Input>
+        <br />
+
+        <TextArea
+          name="message"
+          placeholder="Mesajınız yazın..."
+          rows="5"
+        ></TextArea>
+        <br />
+
+        <Button type="submit">Gönder</Button>
+      </Form>
       <Footer />
     </Container>
   );

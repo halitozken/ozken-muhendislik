@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../2.png";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -41,8 +40,6 @@ const Right = styled.div`
 
   ${mobile({ fontSize: "14px" })}
 `;
-
-const LogoLink = styled.a``;
 
 const Navbar = () => {
   return (

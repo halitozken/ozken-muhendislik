@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { BoxContext } from "../Context";
-import { Visibility } from "material-ui-icons";
 import { mobile } from "../responsive";
 import freze from "../images/freze.png";
 
