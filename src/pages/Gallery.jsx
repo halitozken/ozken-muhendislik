@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Menu from "../components/Menu";
+
 
 const Container = styled.div`
   width: 100%;
@@ -19,7 +19,6 @@ const Gallery = () => {
     <Container>
       <Headline />
       <Navbar />
-      <Menu />
       <ContactInfo />
       <Footer />
     </Container>

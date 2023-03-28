@@ -8,7 +8,7 @@ import { mobile } from "../responsive";
 const Container = styled.div`
   width: 100%;
   height: auto;
-  background-color: #111111;
+  background-color: #313131;
   color: white;
   font-weight: 400;
   padding-top: 24px;
@@ -70,9 +70,7 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.h2`
-  border-bottom: 1px solid white;
-`;
+const Logo = styled.h2``;
 
 const Footer = () => {
   return (
@@ -87,6 +85,8 @@ const Footer = () => {
             <ListItem>Cnc İşleme</ListItem>
             <ListItem>Torna</ListItem>
             <ListItem>Freeze</ListItem>
+            <ListItem>CAD, CAM, CNC Tasarım</ListItem>
+            <ListItem>3D Tasarım ve Baskı</ListItem>
             <ListItem>Dokuma Makineleri</ListItem>
             <ListItem>Bakım, Onarım ve Kurulum</ListItem>
           </List>

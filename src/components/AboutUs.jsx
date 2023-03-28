@@ -7,10 +7,10 @@ import { mobile } from "../responsive";
 const Container = styled.div`
   width: 100%;
   height: 75vh;
-  background-color: #ffffff;
+
   display: flex;
 
-  ${mobile({ height: "60vh" })}
+  ${mobile({ height: "50vh" })}
 `;
 
 const AboutArea = styled.div`
@@ -28,10 +28,10 @@ const Left = styled.div`
 const Right = styled.div`
   width: 35%;
 `;
-const Header = styled.h5`
-  padding-bottom: 25px;
-  color: #0086bc;
-`;
+// const Header = styled.h5`
+//   padding-bottom: 25px;
+//   color: #0086bc;
+// `;
 
 const Text = styled.div`
   font-size: 20px;
@@ -103,7 +103,7 @@ const Image = styled.img`
   width: 100%;
   height: 45vh;
 
-  ${mobile({ height: "26vh" })}
+  ${mobile({ height: "20vh" })}
 `;
 
 const AboutUs = () => {
@@ -111,11 +111,10 @@ const AboutUs = () => {
     <Container>
       <AboutArea>
         <Left>
-          <Header>HAKKIMIZDA</Header>
           <Title>Özken Mühendislik</Title>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-            eiusmod tempor incididunt utlabore et dolore magna aliqua.
+            CNC İşleme, CAD - CAM - CNC Tasarım, Torna, Freze, 3D Tasarım ve
+            Baskı
           </Text>
           <Link
             to="/iletisim"

@@ -34,7 +34,7 @@ const Text = styled.div`
 const Image = styled.img`
   width: 55%;
   height: 12vh;
-  ${mobile({ width: "28%" })}
+  ${mobile({ width: "13%", height: "4vh" })}
 `;
 const Title = styled.h3`
   padding-bottom: 12px;
@@ -48,8 +48,8 @@ const Feature = () => {
         <Info>
           <Title>Güvenilir</Title>
           <Text>
-            Lorem ipsum dolor sit amet, consec tetur adipisizing elit. Resmi
-            olarak bir kurum.
+            Güvenilir hizmet anlayışı, müşterilerin ihtiyaçlarını karşılamak
+            için kaliteli ve dürüst bir yaklaşımı benimsemektir.
           </Text>
         </Info>
       </Box>
@@ -58,8 +58,8 @@ const Feature = () => {
         <Info>
           <Title>En iyi kalite</Title>
           <Text>
-            Lorem ipsum dolor sit amet, consec tetur adipisizing elit. Resmi
-            olarak bir kurum.
+            En iyi kalite, müşteri memnuniyetini maksimize eden ve sürekli
+            iyileştirme hedefleriyle desteklenen bir işletme yaklaşımıdır.
           </Text>
         </Info>
       </Box>
@@ -68,8 +68,9 @@ const Feature = () => {
         <Info>
           <Title>Düşük maliyetli</Title>
           <Text>
-            Lorem ipsum dolor sit amet, consec tetur adipisizing elit. Resmi
-            olarak bir kurum.
+            Düşük maliyet, işletmelerin ürün veya hizmetlerini daha verimli bir
+            şekilde üreterek ve maliyetleri minimumda tutarak müşterilere daha
+            uygun fiyatlar sunmalarını sağlar.
           </Text>
         </Info>
       </Box>

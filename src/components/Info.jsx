@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
 import freze from "../images/freze.png";
+import printer from "../images/3d.png";
 
 const InfoArea = styled.div`
 width: 150%;
@@ -153,6 +154,19 @@ const Info = () => {
             makinelerinin 19. yüzyılda hayatımıza girmiş olsa da teknolojik
             gelişmeler ile günümüzde artık çok daha gelişmiş bir halde karşımıza
             çıkıyor.
+          </Text>
+        </TextArea>
+      </Container>
+      <Container style={{ display: box === "printer" ? true : "none" }}>
+        <Image src={printer} />
+        <TextArea>
+          <Header>3D Tasarım ve Baskı Nedir?</Header>
+          <Text>
+            3D yazıcı, bilgisayar destekli tasarım (CAD) yazılımı tarafından
+            oluşturulmuş 3 boyutlu nesneleri, katman katman malzeme
+            birleştirerek gerçek fiziksel nesnelere dönüştüren bir tür üretim
+            teknolojisidir. 3D yazıcılar, çeşitli malzemeleri kullanarak farklı
+            boyutlarda ve şekillerde nesneler üretebilirler.
           </Text>
         </TextArea>
       </Container>

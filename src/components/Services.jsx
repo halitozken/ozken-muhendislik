@@ -4,16 +4,17 @@ import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
 import Info from "./Info";
 import freze from "../images/freze.png";
+import printer from "../images/3d.png";
 
 const ServicesArea = styled.div`
   width: 100%;
-  height: 75vh;
-  background-color: #ffffff;
+  height: 80vh;
+  background-color: #f8f8f8;
   ${mobile({ height: "auto" })}
 `;
 
 const Container = styled.div`
-  width: 70%;
+  width: 80%;
   height: auto;
   display: flex;
   align-items: center;
@@ -30,19 +31,22 @@ const Head = styled.h1`
 `;
 
 const Box = styled.div`
-  width: 54%;
-  height: 4vh;
+  width: 20vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 24px 15px;
+  padding: 8px;
+  /* width: 44%;
+  height: 4vh;
+  
   text-align: center;
-  padding: 28px;
-  margin: 34px 25px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ 
+ 
+  background-color: white; */
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   transition: all 0.2s;
-
   &:hover {
     background-color: #0086bc;
     color: white;
@@ -53,7 +57,12 @@ const Box = styled.div`
     color: white;
   }
 
-  ${mobile({ width: "65%", height: "10px" })}
+  ${mobile({
+    width: "100%",
+    height: "74px",
+    margin: "16px auto",
+    padding: "0px",
+  })}
 `;
 
 const Image = styled.img`
@@ -82,6 +91,7 @@ const Services = () => {
             }
           >
             <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_isleme.png?format=webp&width=1400&rmode=min"></Image>
+
             <Title>CNC İşleme</Title>
           </Box>
           <Box
@@ -102,8 +112,16 @@ const Services = () => {
             <Image src={freze}></Image>
             <Title>Freze</Title>
           </Box>
+          <Box
+            className="printer"
+            onClick={(e) =>
+              context.choosenBox(e.target.className.split(" ")[2])
+            }
+          >
+            <Image src={printer}></Image>
+            <Title>3D Tasarım</Title>
+          </Box>
         </BoxArea>
-
         <Info />
       </Container>
     </ServicesArea>

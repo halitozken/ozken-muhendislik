@@ -6,9 +6,9 @@ import styled from "styled-components";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 import { BoxContext } from "../Context";
-import Menu from "../components/Menu";
 import AboutUs from "../components/AboutUs";
 import Feature from "../components/Feature";
+import About from "../components/About";
 
 const Container = styled.div`
   width: 100%;
@@ -27,12 +27,11 @@ const Home = () => {
       <Container>
         <Headline />
         <Navbar />
-        <Menu />
         <Slider />
         <AboutUs />
-        <Feature />
         <Services />
-        {/* <Info /> */}
+        <About />
+        <Feature />
         <Footer />
       </Container>
     </BoxContext.Provider>
