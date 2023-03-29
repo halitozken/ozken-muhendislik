@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { motion } from "framer-motion/dist/framer-motion";
+import MobileMenu from "../components/MobileMenu";
+import { BoxContext } from "../Context";
 
 const Container = styled.div`
   width: auto;
-  height: "auto" ${mobile({ height: "auto" })};
+  height: "auto" 
+  overflow: hidden;
 `;
 
 const ContactInfo = styled.div`
@@ -126,7 +130,7 @@ const Map = styled.div`
 `;
 
 const Iframe = styled.iframe`
-  width: 100%;
+  width: 100vw;
   height: 600px;
   border: solid white;
 
@@ -134,61 +138,81 @@ const Iframe = styled.iframe`
 `;
 
 const Contact = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
-    <Container>
-      <Headline />
-      <Navbar />
-      <ContactInfo>
-        <Left>
-          <Address>
-            <Header>İletişim:</Header>
-            <Text>Duaçınarı Mh.</Text>
-            <Text>Uslu Çk. No:1 </Text>
-            <Text>Yıldırım / Bursa</Text>
-            <Text>Telefon: +90 224 363 83 15</Text>
-            <Text>info@ozkenmuhendislik.com</Text>
-          </Address>
-        </Left>
-        <Right>
-          <Form action="https://formsubmit.co/el/kusepo" method="POST">
-            <FormHeader>Bizimle iletişime geçin...</FormHeader>
-            <Input required type="text" name="fname" placeholder="Ad"></Input>
-            <br />
+    <BoxContext.Provider value={{ isOpen, setOpen }}>
+      <Container>
+        <Headline />
+        <Navbar />
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
+          <MobileMenu />
+          <ContactInfo>
+            <Left>
+              <Address>
+                <Header>İletişim:</Header>
+                <Text>Duaçınarı Mh.</Text>
+                <Text>Uslu Çk. No:1 </Text>
+                <Text>Yıldırım / Bursa</Text>
+                <Text>Telefon: +90 224 363 83 15</Text>
+                <Text>info@ozkenmuhendislik.com</Text>
+              </Address>
+            </Left>
+            <Right>
+              <Form action="https://formsubmit.co/el/kusepo" method="POST">
+                <FormHeader>Bizimle iletişime geçin...</FormHeader>
+                <Input
+                  required
+                  type="text"
+                  name="fname"
+                  placeholder="Ad"
+                ></Input>
+                <br />
 
-            <Input
-              required
-              type="text"
-              name="lname"
-              placeholder="Soyad"
-            ></Input>
-            <br />
+                <Input
+                  required
+                  type="text"
+                  name="lname"
+                  placeholder="Soyad"
+                ></Input>
+                <br />
 
-            <Input required type="text" name="mail" placeholder="Mail"></Input>
-            <br />
+                <Input
+                  required
+                  type="text"
+                  name="mail"
+                  placeholder="Mail"
+                ></Input>
+                <br />
 
-            <TextArea
-              required
-              name="message"
-              placeholder="Mesajınız yazın..."
-              rows="5"
-            ></TextArea>
-            <br />
+                <TextArea
+                  required
+                  name="message"
+                  placeholder="Mesajınız yazın..."
+                  rows="5"
+                ></TextArea>
+                <br />
 
-            <Button type="submit">Gönder</Button>
-          </Form>
-        </Right>
-      </ContactInfo>
-      <Map>
-        <Iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d190.4813629688114!2d29.095887821882023!3d40.193449150662026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1679248099107!5m2!1str!2str"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></Iframe>
-      </Map>
-
-      <Footer />
-    </Container>
+                <Button type="submit">Gönder</Button>
+              </Form>
+            </Right>
+          </ContactInfo>
+          <Map>
+            <Iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d190.4813629688114!2d29.095887821882023!3d40.193449150662026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1679248099107!5m2!1str!2str"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></Iframe>
+          </Map>
+        </motion.div>
+        <Footer />
+      </Container>
+    </BoxContext.Provider>
   );
 };
 

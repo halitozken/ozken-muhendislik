@@ -10,28 +10,42 @@ import AboutUs from "../components/AboutUs";
 import Feature from "../components/Feature";
 import About from "../components/About";
 
+import { motion } from "framer-motion/dist/framer-motion";
+import MobileMenu from "../components/MobileMenu";
+
 const Container = styled.div`
   width: 100%;
   overflow: hidden;
 `;
 
 const Home = () => {
-  const [selectedBox, setSelectedBox] = useState("cnc");
+  const [selectedBox, setSelectedBox] = useState("makine");
+  const [isOpen, setOpen] = useState(false);
 
   const choosenBox = (data) => {
     setSelectedBox(data);
   };
 
+  console.log(isOpen);
+
   return (
-    <BoxContext.Provider value={{ selectedBox, choosenBox }}>
+    <BoxContext.Provider value={{ selectedBox, choosenBox, isOpen, setOpen }}>
       <Container>
         <Headline />
         <Navbar />
-        <Slider />
-        <AboutUs />
-        <Services />
-        <About />
-        <Feature />
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
+          <MobileMenu />
+
+          <Slider />
+          <AboutUs />
+          <Services />
+          <About />
+          <Feature />
+        </motion.div>
         <Footer />
       </Container>
     </BoxContext.Provider>

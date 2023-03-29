@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
-import freze from "../images/freze.png";
 import printer from "../images/3d.png";
+
+import kalip from "../images/kalip.png";
+import aparat from "../images/aparat.png";
+import makine from "../images/makine.png";
+import fikstür from "../images/fixture.png";
 
 const InfoArea = styled.div`
 width: 150%;
@@ -33,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  width: 22%;
+  width: 35%;
   height: auto;
 
   ${mobile({ display: "none" })}
@@ -71,102 +75,99 @@ const Info = () => {
 
   return (
     <InfoArea>
-      <Container id="cncBox" style={{ display: box === "cnc" ? true : "none" }}>
-        <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_isleme.png?format=webp&width=1400&rmode=min" />
+      <Container
+        id="makine"
+        style={{ display: box === "makine" ? true : "none" }}
+      >
+        <Image src={makine} />
         <TextArea>
-          <Header>CNC İşleme Nedir?</Header>
+          <Header>Makine Tasarımı ve İmalatı</Header>
           <Text>
-            CNC işleme teknolojisi, bilgisayar kontrollü eksenler aracılığıyla
-            hareket ettirilen ve kesici takımlar ile iş parçasından talaş
-            kaldırılarak şekillendirme yapan bir talaşlı imalat yöntemidir.
-            {/* <br></br>
-            <br></br>
-            CNC işleme ile üretim basitçe birkaç aşamadan oluşur: İlk adım, elde
-            edilmek istenen modelin, iş parçasından nasıl bir işlem sırası ve
-            hangi yöntemler ile elde edileceğini belirleyen programlama ve CAM
-            dosyası oluşturma adımıdır. Bu aşamada kısaca kesici takımın dönme
-            hızı, motor gücü ve kesici takımların izleyeceği yol gibi detaylar
-            belirlenir. */}
-            {/* <br></br>
-            <br></br>
-            Bu aşamadan sonra, iş parçasının makineye bağlanmasını
-            kolaylaştıracak tutucu aparatlar parçaya göre hazırlanır veya
-            tasarlanır. İş parçası makineye sabit bir şekilde yerleştirildikten
-            sonra önceden programlanmış döngü başlatılarak talaş kaldırma
-            işlemine geçilir ve bu süreç sonunda tasarlanan ürün elde edilir.
-            <br></br>
-            <br></br>
-            CNC işleme teknolojisi, geniş malzeme çeşitliliğiyle yüksek
-            hassasiyet ve tekrarlanabilirliğe sahip mekanik parçalar
-            üretebilmenize olanak tanır. Orta aşama prototiplemeden son ürün
-            kullanımına kadar birçok üretim ihtiyacını adet sınırı olmadan
-            karşılayabileceğiniz talaşlı imalat yöntemidir. */}
+            Makine tasarımı, yada diğer adıyla makina tasarımı, müşterinin
+            gereksinimlerini karşılamak için ekonomik olarak bir makine veya
+            yapı oluşturmak için hayal gücünün, bilimsel prensiplerin ve
+            mühendislik tekniklerinin kullanılması olarak tanımlanır.
+            Makinelerin tasarımı, bir makinenin yaratılmasında ilk adımdır. Bir
+            makinenin nasıl görüneceği ve çalışacağı konusunda temel fikri
+            verir.
           </Text>
         </TextArea>
       </Container>
       <Container
-        id="tornaBox"
+        id="kalip"
         style={{
-          display: box === "torna" ? true : "none",
+          display: box === "kalip" ? true : "none",
         }}
       >
-        <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min" />
+        <Image src={kalip} />
         <TextArea>
-          <Header>Torna Nedir?</Header>
+          <Header>Kalıp Tasarımı ve İmalatı</Header>
 
           <Text>
-            Kendi ekseni etrafında dönen metal bir iş parçası üzerinden doğrusal
-            hareket eden kesici takım aracılığı ile talaş kaldırma işlemine
-            tornalama denir. Tornalama işleminin yapıldığı tezgâha torna tezgâhı
-            ya da bilinen ve kısa ismiyle torna adı verilir.
-            {/* <br></br>
-            <br></br>
-            Torna tezgâhları pek çok işlemede kullanılır; ağaç tornalama, metal
-            işleme, metal sıvama, termal püskürtme ya da cam işleme gibi
-            amaçlarda kullanılır. Torna tezgahları ağaç tornalama, metal işleme,
-            metal sıvama, termal püskürtme, parça ıslahı ve cam işlemede
-            kullanılır. Torna tezgahının en iyi bilinen tasarımı çanak çömlek
-            yapımında çömlek çamurunu şekillendirmek için kullanılan çömlekçi
-            çarkı’dır.
-            <br></br>
-            <br></br>
-            En uygun şekilde donatılmış tornalar aynı zamanda katı malzemeleri
-            döndürerek düz silindirik yüzeylerin yapımında ve vida dişleri
-            açmada veya helis yüzeyler yapımında da kullanılır. Çıtalarla
-            inanılmaz karmaşıklıkta üç boyutlu katılar yapılabilir. İş parçası
-            genellikle bir veya iki punta tarafından tutulur ve bunlardan en az
-            biri farklı iş parçası uzunluklarına uyum sağlamak için genelde
-            yatay hareket ettirilir. İş parçası torna aynası veya pens
-            kullanılarak veya kelepçelerle veya dog clutch’ı kullanılıp
-            sabitlenerek de dönme ekseni etrafında döndürülebilir. */}
+            Kalıp tasarımı, kalıpların boyutlandırılması ve konumu, kesme
+            kenarlarının boyutlandırılması, hassasiyetinin belirlenmesi, soğutma
+            tekniklerinin belirlenmesi gibi üretim süreci öncesi yapılan ve
+            nihai üretim proseslerinin belirlenmesine imkan veren çalışmalar
+            bütünüdür. Firmamızdan talep edilen kalıplara ilişkin olarak tüm bu
+            detaylar, kalıp tasarımı aşamasında belirlenir ve sonraki aşama olan
+            kalıp detay tasarımının yapılması aşamasına geçilir.
           </Text>
         </TextArea>
       </Container>
-      <Container style={{ display: box === "freze" ? true : "none" }}>
-        <Image src={freze} />
+      <Container style={{ display: box === "fikstür" ? true : "none" }}>
+        <Image src={fikstür} />
         <TextArea>
-          <Header>Freze nedir, ne işe yarar?</Header>
+          <Header>Fikstür Tasarımı ve İmalatı</Header>
           <Text>
-            Freze endüstriyel talaşlı imalatta kullanılan bir çeşit takım
-            tezgahına verilen isimdir. 19 yüzyılın sonralarına doğru hayatımızda
-            yerini aldı. Günümüzde özellikle metal ya da metal alaşımlarından
-            parça üreten her işletmede freze tezgâhı görmek mümkün. Freze
-            makinelerinin 19. yüzyılda hayatımıza girmiş olsa da teknolojik
-            gelişmeler ile günümüzde artık çok daha gelişmiş bir halde karşımıza
-            çıkıyor.
+            İmalat sürecinde ya da diğer endüstriyel süreçlerde iş paketlerini
+            doğru lokasyona yerleştirmek ve sabitlenmiş konumda tutmak için
+            kullanılır. Ayrıca; üretim maliyetini azaltırken kalitenin
+            devamlılığını ve doğru özelliklere sahip çok çeşitli parçaların
+            üretilebilmesini sağlar.
           </Text>
         </TextArea>
       </Container>
-      <Container style={{ display: box === "printer" ? true : "none" }}>
+      <Container style={{ display: box === "aparat" ? true : "none" }}>
+        <Image src={aparat} />
+        <TextArea>
+          <Header>Aparat Tasarımı ve İmalatı</Header>
+          <Text>
+            Aparat ve fikstürler, ürünlerinizi yüksek kaliteli, güvenli ve
+            yinelenebilen bir şekilde üretmenizi ve teslim etmenizi sağlayan
+            imalat yardımcılarıdır. Genellikle birlikte kullanılmalarına rağmen,
+            aparat ve fikstür terimleri arasında belirgin farklar vardır.
+            Aparatlar, operasyon süresi boyunca iş paketinin hareketini ve
+            konumunu kontrol etmek için kullanılır. Aynı zamanda, ürünlerin
+            imalatındaki verimliliği arttırırken üründe doğruluk,
+            yinelenebilirlik ve değiştirilebilirlik sağlar.
+          </Text>
+        </TextArea>
+      </Container>
+      <Container style={{ display: box === "yedek" ? true : "none" }}>
+        <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min" />
+        <TextArea>
+          <Header>Yedek Parça İmalatı</Header>
+          <Text>
+            Yedek parça veya servis parçası, bir envanterde tutulan ve arızalı
+            birimlerin onarımı veya yenilenmesi için kullanılan değiştirilebilir
+            bir önceden hazırlanmış parçadır. Yedek parçalar, lojistik
+            mühendisliği ve tedarik zinciri yönetiminin önemli bir özelliğidir
+            ve genellikle özel yedek parça yönetim sistemlerinden oluşur. Yedek
+            parçalar, değiştirilebilir parçaların ve seri üretimin endüstriyel
+            gelişiminin bir sonucudur.
+          </Text>
+        </TextArea>
+      </Container>
+      <Container style={{ display: box === "threed" ? true : "none" }}>
         <Image src={printer} />
         <TextArea>
-          <Header>3D Tasarım ve Baskı Nedir?</Header>
+          <Header>3D Tasarım ve Baskı</Header>
           <Text>
-            3D yazıcı, bilgisayar destekli tasarım (CAD) yazılımı tarafından
-            oluşturulmuş 3 boyutlu nesneleri, katman katman malzeme
-            birleştirerek gerçek fiziksel nesnelere dönüştüren bir tür üretim
-            teknolojisidir. 3D yazıcılar, çeşitli malzemeleri kullanarak farklı
-            boyutlarda ve şekillerde nesneler üretebilirler.
+            3B (3D) tasarım herhangi bir objeyi veya nesneyi bilgisayar
+            ortamında belirli araçları kullanarak oluşturmaktır. 3B tasarım
+            birçok meslek grubunda kullanılmaktır. 3B tasarım, bir ihtiyaca,
+            kullanım alanına, mühendislik hesaplarına göre önce kağıt üzerinde
+            belirlenen parçanın bilgisayar ortamına aktarılmasıdır.
           </Text>
         </TextArea>
       </Container>

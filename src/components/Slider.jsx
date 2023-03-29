@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
-import foto1 from "../images/pexels-alex-11951233.jpg";
-import foto2 from "../images/pexels-daniel-smyth-10406128.jpg";
-import foto3 from "../images/pexels-pixabay-50691.jpg";
-import foto4 from "../images/foto4.jpeg";
+import foto1 from "../images/pexels-alex-11951233.png";
+import foto2 from "../images/pexels-daniel-smyth-10406128.png";
+import foto3 from "../images/pexels-pixabay-50691.png";
+import foto4 from "../images/foto4.png";
 
 const Container = styled.div`
   width: 100%;

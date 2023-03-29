@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import Dropdown from "./Dropdown";
 import logo from "../images/whlogo.png";
 import Hamburger from "hamburger-react";
-import "./Navbar.css";
+import { BoxContext } from "../Context";
 
 const Nav = styled.nav`
   width: 100%;
@@ -57,37 +57,10 @@ const HamburgerMenu = styled.div`
   ${mobile({ display: "block" })};
 `;
 
-const Container = styled.div`
-  width: 100%;
-  height: auto;
-  transition: all 0.5s;
-`;
+const Navbar = (props) => {
+  const context = useContext(BoxContext);
 
-const MobileMenu = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const MobileMenuItem = styled.div`
-  width: 390px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid white;
-  color: white;
-  font-weight: 600;
-  background-color: #0086bc;
-  transition: all 0.5s;
-`;
-
-const Navbar = () => {
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
 
   const [dropdown, setDropdown] = useState(false);
 
@@ -115,7 +88,11 @@ const Navbar = () => {
         </Link>
 
         <HamburgerMenu>
-          <Hamburger toggled={isOpen} toggle={setOpen} duration={0.3} />
+          <Hamburger
+            toggled={context.isOpen}
+            toggle={context.setOpen}
+            duration={0.3}
+          />
         </HamburgerMenu>
 
         <Menu>
@@ -155,62 +132,6 @@ const Navbar = () => {
           </Link>
         </Menu>
       </Nav>
-      <Container style={{ display: isOpen === true ? true : "none" }}>
-        <MobileMenu>
-          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <MobileMenuItem>Anasayfa</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/hakkimizda"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Kurumsal</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/misyon"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Misyon</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/vizyon"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Vizyon</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/kalite"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Kalite Politikamız</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/hizmetler"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Hizmetlerimiz</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/galeri"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>Galeri</MobileMenuItem>
-          </Link>
-
-          <Link
-            to="/iletisim"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MobileMenuItem>İletişim</MobileMenuItem>
-          </Link>
-        </MobileMenu>
-      </Container>
     </>
   );
 };

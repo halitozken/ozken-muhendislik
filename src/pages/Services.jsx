@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
@@ -6,9 +6,14 @@ import Footer from "../components/Footer";
 // import freze from "../images/freze.png";
 import printer from "../images/3d.png";
 import { mobile } from "../responsive";
-import cnc from "../images/pexels-pixabay-50691.jpg";
-import torna from "../images/pexels-alex-11951233.jpg";
-import freze2 from "../images/pexels-daniel-smyth-10406128.jpg";
+
+import { motion } from "framer-motion/dist/framer-motion";
+import MobileMenu from "../components/MobileMenu";
+import { BoxContext } from "../Context";
+import kalip from "../images/kalip.png";
+import aparat from "../images/aparat.png";
+import makine from "../images/makine.png";
+import fikstür from "../images/fixture.png";
 
 const Container = styled.div`
   width: 70%;
@@ -49,7 +54,7 @@ const Image = styled.img`
   width: 286px;
   height: 204px;
 
-  --c: #006790; /* the border color */
+  --c: #0086bc; /* the border color */
   --b: 5px; /* the border thickness*/
   --g: 5px; /* the gap on hover */
 
@@ -79,59 +84,65 @@ const ServiceName = styled.h2`
   align-items: center;
   padding-top: 15px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
 
   ${mobile({ fontSize: "14px" })}
 `;
 
 const Services = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
-    <>
+    <BoxContext.Provider value={{ isOpen, setOpen }}>
       <Headline />
       <Navbar />
-      <Container>
-        <ServicesArea>
-          <FirstLine>
-            <Box>
-              <Image src={cnc} />
-              <ServiceName>CNC İşleme</ServiceName>
-            </Box>
-            <Box>
-              <Image src={torna} />
-              <ServiceName>Torna</ServiceName>
-            </Box>
-            <Box>
-              <Image src={freze2} />
-              <ServiceName>Freeze</ServiceName>
-            </Box>
-          </FirstLine>
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+      >
+        <MobileMenu />
+        <Container>
+          <ServicesArea>
+            <FirstLine>
+              <Box>
+                <Image src={makine} />
+                <ServiceName>Makine Tasarımı ve İmalatı</ServiceName>
+              </Box>
+              <Box>
+                <Image src={kalip} />
+                <ServiceName>Kalıp Tasarımı ve İmalatı</ServiceName>
+              </Box>
+              <Box>
+                <Image src={fikstür} />
+                <ServiceName>Fikstür Tasarımı ve İmalatı</ServiceName>
+              </Box>
+            </FirstLine>
 
-          <SecondLine>
-            <Box>
-              <Image
-                src={
-                  "https://www.aydinkalipsanayi.com/Admin/Sayfalar/urunler/55cdb4db0075d96e38cc81520ebde3.jpg"
-                }
-              />
-              <ServiceName>CAD, CAM, CNC Tasarım</ServiceName>
-            </Box>
-            <Box>
-              <Image
-                src={
-                  "https://www.aydinkalipsanayi.com/Admin/Sayfalar/urunler/a418f9653b10aa0a4819f69cbf4ec9.jpg"
-                }
-              />
-              <ServiceName>Kalıp İmalatı</ServiceName>
-            </Box>
-            <Box>
-              <Image src={printer} />
-              <ServiceName>3D Tasarım ve Baskı</ServiceName>
-            </Box>
-          </SecondLine>
-        </ServicesArea>
-      </Container>
+            <SecondLine>
+              <Box>
+                <Image src={aparat} />
+                <ServiceName>Aparat Tasarımı ve İmalatı</ServiceName>
+              </Box>
+              <Box>
+                <Image
+                  style={{ width: "256px", height: "160px" }}
+                  src={
+                    "https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min"
+                  }
+                />
+                <ServiceName>Yedek Parça İmalatı</ServiceName>
+              </Box>
+              <Box>
+                <Image src={printer} style={{ height: "234px" }} />
+                <ServiceName>3D Tasarım ve Baskı</ServiceName>
+              </Box>
+            </SecondLine>
+          </ServicesArea>
+        </Container>
+      </motion.div>
       <Footer />
-    </>
+    </BoxContext.Provider>
   );
 };
 

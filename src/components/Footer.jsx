@@ -82,13 +82,12 @@ const Footer = () => {
         <Center>
           <Text>Hizmetlerimiz</Text>
           <List>
-            <ListItem>Cnc İşleme</ListItem>
-            <ListItem>Torna</ListItem>
-            <ListItem>Freeze</ListItem>
-            <ListItem>CAD, CAM, CNC Tasarım</ListItem>
+            <ListItem>Makine Tasarımı ve İmalatı</ListItem>
+            <ListItem>Kalıp Tasarımı ve İmalatı</ListItem>
+            <ListItem>Fikstür Tasarımı ve İmalatı</ListItem>
+            <ListItem>Aparat Tasarımı ve İmalatı</ListItem>
+            <ListItem>Yedek Parça İmalatı</ListItem>
             <ListItem>3D Tasarım ve Baskı</ListItem>
-            <ListItem>Dokuma Makineleri</ListItem>
-            <ListItem>Bakım, Onarım ve Kurulum</ListItem>
           </List>
         </Center>
         <Right>

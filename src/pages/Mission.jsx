@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { motion } from "framer-motion/dist/framer-motion";
+import { BoxContext } from "../Context";
+import MobileMenu from "../components/MobileMenu";
 
 const Container = styled.div`
   width: 100%;
   height: auto;
+  overflow: hidden;
 `;
 
 const AboutArea = styled.div`
@@ -17,7 +21,7 @@ const AboutArea = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${mobile({ height: "auto" })}
+  ${mobile({ height: "auto",  paddingBottom: "20px"  })}
 `;
 
 const Box = styled.div`
@@ -68,32 +72,43 @@ const Image = styled.img`
 `;
 
 const Mission = () => {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <Container>
-      <Headline />
-      <Navbar />
-      <AboutArea>
-        <Box>
-          <Right>
-            <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/ee6d81c58f.jpg" />
-          </Right>
-          <Left>
-            <Header>MİSYON</Header>
-            <Text>
-              Müşteri odaklığı üzerine kurulmuş olup, bunu sağlamak için;
-              müşteri şartlarının yerine getirilmesi ve müşteri memnuniyetinin
-              sağlanmasını esas almıştır. Amacımız müşterilerimizin
-              beklentilerine tamamıyla cevap verebilmek, firmanızın rekabet ve
-              gelişim gücünü arttırabilmektir. Firmamız, hedefleri tespit eder
-              ve kalite politikalarının uygulanması ve geliştirilmesi için
-              planlama yapar ve gerekli desteği sağlar. Takım ruhu içerisinde
-              şirket ve birim hedeflerine ulaşmak için çalışırız.
-            </Text>
-          </Left>
-        </Box>
-      </AboutArea>
-      <Footer />
-    </Container>
+    <BoxContext.Provider value={{ isOpen, setOpen }}>
+      <Container>
+        <Headline />
+        <Navbar />
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
+          <MobileMenu />
+          <AboutArea>
+            <Box>
+              <Right>
+                <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/ee6d81c58f.jpg" />
+              </Right>
+              <Left>
+                <Header>MİSYON</Header>
+                <Text>
+                  Müşteri odaklığı üzerine kurulmuş olup, bunu sağlamak için;
+                  müşteri şartlarının yerine getirilmesi ve müşteri
+                  memnuniyetinin sağlanmasını esas almıştır. Amacımız
+                  müşterilerimizin beklentilerine tamamıyla cevap verebilmek,
+                  firmanızın rekabet ve gelişim gücünü arttırabilmektir.
+                  Firmamız, hedefleri tespit eder ve kalite politikalarının
+                  uygulanması ve geliştirilmesi için planlama yapar ve gerekli
+                  desteği sağlar. Takım ruhu içerisinde şirket ve birim
+                  hedeflerine ulaşmak için çalışırız.
+                </Text>
+              </Left>
+            </Box>
+          </AboutArea>
+        </motion.div>
+        <Footer />
+      </Container>
+    </BoxContext.Provider>
   );
 };
 

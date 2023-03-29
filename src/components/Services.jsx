@@ -3,14 +3,17 @@ import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
 import Info from "./Info";
-import freze from "../images/freze.png";
 import printer from "../images/3d.png";
+import kalip from "../images/kalip.png";
+import aparat from "../images/aparat.png";
+import makine from "../images/makine.png";
+import fikstür from "../images/fixture.png";
 
 const ServicesArea = styled.div`
   width: 100%;
-  height: 80vh;
+  height: auto;
   background-color: #f8f8f8;
-  ${mobile({ height: "auto" })}
+  ${mobile({ height: "auto", paddingBottom: "20px" })}
 `;
 
 const Container = styled.div`
@@ -70,7 +73,7 @@ const Image = styled.img`
   pointer-events: none;
 `;
 
-const Title = styled.h2`
+const Title = styled.h4`
   pointer-events: none;
 `;
 
@@ -85,41 +88,59 @@ const Services = () => {
       <Container>
         <BoxArea>
           <Box
-            className="cnc"
+            className="makine"
             onClick={(e) =>
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_isleme.png?format=webp&width=1400&rmode=min"></Image>
+            <Image src={makine}></Image>
 
-            <Title>CNC İşleme</Title>
+            <Title>Makine Tasarımı ve İmalatı</Title>
           </Box>
           <Box
-            className="torna"
+            className="kalip"
+            onClick={(e) =>
+              context.choosenBox(e.target.className.split(" ")[2])
+            }
+          >
+            <Image src={kalip}></Image>
+            <Title>Kalıp Tasarımı ve İmalatı</Title>
+          </Box>
+          <Box
+            className="fikstür"
+            onClick={(e) =>
+              context.choosenBox(e.target.className.split(" ")[2])
+            }
+          >
+            <Image src={fikstür}></Image>
+            <Title>Fikstür Tasarımı ve İmalatı</Title>
+          </Box>
+          <Box
+            className="aparat"
+            onClick={(e) =>
+              context.choosenBox(e.target.className.split(" ")[2])
+            }
+          >
+            <Image src={aparat}></Image>
+            <Title>Aparat Tasarımı ve İmalatı</Title>
+          </Box>
+          <Box
+            className="yedek"
             onClick={(e) =>
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
             <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min"></Image>
-            <Title>Torna</Title>
+            <Title>Yedek Parça İmalatı</Title>
           </Box>
           <Box
-            className="freze"
-            onClick={(e) =>
-              context.choosenBox(e.target.className.split(" ")[2])
-            }
-          >
-            <Image src={freze}></Image>
-            <Title>Freze</Title>
-          </Box>
-          <Box
-            className="printer"
+            className="threed"
             onClick={(e) =>
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
             <Image src={printer}></Image>
-            <Title>3D Tasarım</Title>
+            <Title>3D Tasarım ve Baskı</Title>
           </Box>
         </BoxArea>
         <Info />

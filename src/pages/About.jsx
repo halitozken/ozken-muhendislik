@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { motion } from "framer-motion/dist/framer-motion";
+import MobileMenu from "../components/MobileMenu";
+import { BoxContext } from "../Context";
 
 const Container = styled.div`
   width: 100%;
@@ -17,7 +20,7 @@ const AboutArea = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${mobile({ height: "auto" })}
+  ${mobile({ height: "auto", paddingBottom: "20px" })}
 `;
 
 const Box = styled.div`
@@ -68,35 +71,45 @@ const Image = styled.img`
 `;
 
 const About = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
-    <Container>
-      <Headline />
-      <Navbar />
+    <BoxContext.Provider value={{ isOpen, setOpen }}>
+      <Container>
+        <Headline />
+        <Navbar />
 
-      <AboutArea>
-        <Box>
-          <Left>
-            <Header>HAKKIMIZDA</Header>
-            <Text>
-              Özken Mühendislik İlk Olarak 1995 yılında Kalıpçılığın Merkezi
-              Olan Bursa'da İsmail Özken Tarafından Kurularak Faaliyete
-              Başlamıştır. Yenilikçi Politika Anlayışıyla Günümüzün Teknolojisi
-              ile Yılların Deneyimini Birleştirerek Sektöründe 28 Senedir Kalite
-              ve Müşteri Memnuniyetini Esas Alarak Hizmet Vermektedir. Firmamız,
-              hatalar oluştuktan sonra düzeltmek yerine, bu hatalar oluşmadan
-              önleyici tedbirleri alır, müşterisine daha iyi hizmet verebilmek
-              için işlerinde sürekli iyileştirmeler ve teknolojik yatırımlar
-              yapar.
-            </Text>
-          </Left>
-          <Right>
-            <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/c09adf03ee.jpg" />
-          </Right>
-        </Box>
-      </AboutArea>
-
-      <Footer />
-    </Container>
+        <motion.div
+          initial={{ width: "0" }}
+          animate={{ width: "100%" }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        >
+          <MobileMenu />
+          <AboutArea>
+            <Box>
+              <Left>
+                <Header>HAKKIMIZDA</Header>
+                <Text>
+                  Özken Mühendislik İlk Olarak 1995 yılında Kalıpçılığın Merkezi
+                  Olan Bursa'da İsmail Özken Tarafından Kurularak Faaliyete
+                  Başlamıştır. Yenilikçi Politika Anlayışıyla Günümüzün
+                  Teknolojisi ile Yılların Deneyimini Birleştirerek Sektöründe
+                  28 Senedir Kalite ve Müşteri Memnuniyetini Esas Alarak Hizmet
+                  Vermektedir. Firmamız, hatalar oluştuktan sonra düzeltmek
+                  yerine, bu hatalar oluşmadan önleyici tedbirleri alır,
+                  müşterisine daha iyi hizmet verebilmek için işlerinde sürekli
+                  iyileştirmeler ve teknolojik yatırımlar yapar.
+                </Text>
+              </Left>
+              <Right>
+                <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/c09adf03ee.jpg" />
+              </Right>
+            </Box>
+          </AboutArea>
+        </motion.div>
+        <Footer />
+      </Container>
+    </BoxContext.Provider>
   );
 };
 
