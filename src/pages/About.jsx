@@ -90,15 +90,16 @@ const About = () => {
               <Left>
                 <Header>HAKKIMIZDA</Header>
                 <Text>
-                  Özken Mühendislik İlk Olarak 1995 yılında Kalıpçılığın Merkezi
-                  Olan Bursa'da İsmail Özken Tarafından Kurularak Faaliyete
-                  Başlamıştır. Yenilikçi Politika Anlayışıyla Günümüzün
-                  Teknolojisi ile Yılların Deneyimini Birleştirerek Sektöründe
-                  28 Senedir Kalite ve Müşteri Memnuniyetini Esas Alarak Hizmet
-                  Vermektedir. Firmamız, hatalar oluştuktan sonra düzeltmek
-                  yerine, bu hatalar oluşmadan önleyici tedbirleri alır,
-                  müşterisine daha iyi hizmet verebilmek için işlerinde sürekli
-                  iyileştirmeler ve teknolojik yatırımlar yapar.
+                  Özken Mühendislik ilk olarak 1995 yılında Makineciliğin ve
+                  Metal Sanayi'nin Merkezi olan Bursa'da İsmail Özken tarafından
+                  kurularak faaliyete başlamıştır. Yenilikçi politika
+                  anlayışıyla günümüzün teknolojisi ile yılların deneyimini
+                  birleştirerek sektöründe 28 senedir Kalite ve Müşteri
+                  Memnuniyetini esas alarak hizmet vermektedir. Firmamız,
+                  hatalar oluştuktan sonra düzeltmek yerine, bu hatalar
+                  oluşmadan önleyici tedbirleri alır, müşterisine daha iyi
+                  hizmet verebilmek için işlerinde sürekli iyileştirmeler ve
+                  teknolojik yatırımlar yapar.
                 </Text>
               </Left>
               <Right>

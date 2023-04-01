@@ -8,6 +8,7 @@ import kalip from "../images/kalip.png";
 import aparat from "../images/aparat.png";
 import makine from "../images/makine.png";
 import fikstür from "../images/fixture.png";
+import disli from "../images/disli.png";
 
 const ServicesArea = styled.div`
   width: 100%;
@@ -130,7 +131,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min"></Image>
+            <Image src={disli}></Image>
             <Title>Yedek Parça İmalatı</Title>
           </Box>
           <Box

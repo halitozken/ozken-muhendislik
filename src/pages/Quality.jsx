@@ -16,11 +16,11 @@ const Container = styled.div`
 
 const AboutArea = styled.div`
   width: 100%;
-  height: 65vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding-top: 20px;
   ${mobile({ height: "auto", paddingBottom: "20px" })}
 `;
 

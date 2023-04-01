@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 // import freze from "../images/freze.png";
 import printer from "../images/3d.png";
 import { mobile } from "../responsive";
-
 import { motion } from "framer-motion/dist/framer-motion";
 import MobileMenu from "../components/MobileMenu";
 import { BoxContext } from "../Context";
@@ -14,6 +13,7 @@ import kalip from "../images/kalip.png";
 import aparat from "../images/aparat.png";
 import makine from "../images/makine.png";
 import fikstür from "../images/fixture.png";
+import disli from "../images/disli.png";
 
 const Container = styled.div`
   width: 70%;
@@ -47,14 +47,17 @@ const SecondLine = styled.div`
 `;
 
 const Box = styled.div`
-  ${mobile({ paddingBottom: "12px" })}
+  padding-bottom: 12px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  ${mobile({ margin: "32px" })}
 `;
 
 const Image = styled.img`
   width: 286px;
   height: 204px;
-
-  --c: #0086bc; /* the border color */
+pointer-events: none;
+  /* --c: #0086bc; /* the border color */
   --b: 5px; /* the border thickness*/
   --g: 5px; /* the gap on hover */
 
@@ -73,7 +76,7 @@ const Image = styled.img`
   &:hover {
     --_i: 100%;
     transition: 0.3s, background-size 0.3s 0.3s;
-  }
+  } */
 
   ${mobile({ width: "360px", height: "240px" })}
 `;
@@ -86,7 +89,7 @@ const ServiceName = styled.h2`
   text-align: center;
   font-size: 20px;
 
-  ${mobile({ fontSize: "14px" })}
+  ${mobile({ fontSize: "18px" })}
 `;
 
 const Services = () => {
@@ -125,16 +128,11 @@ const Services = () => {
                 <ServiceName>Aparat Tasarımı ve İmalatı</ServiceName>
               </Box>
               <Box>
-                <Image
-                  style={{ width: "256px", height: "160px" }}
-                  src={
-                    "https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min"
-                  }
-                />
+                <Image src={disli} />
                 <ServiceName>Yedek Parça İmalatı</ServiceName>
               </Box>
               <Box>
-                <Image src={printer} style={{ height: "234px" }} />
+                <Image src={printer} />
                 <ServiceName>3D Tasarım ve Baskı</ServiceName>
               </Box>
             </SecondLine>

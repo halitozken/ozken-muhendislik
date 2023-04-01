@@ -9,9 +9,10 @@
   }
   
   .dropdown-menu li {
-    background: #F8F8F8;
+    background: #dcdcdc;
     cursor: pointer;
     transition: all 0.3s;
+
   }
   
   .dropdown-menu li:hover {

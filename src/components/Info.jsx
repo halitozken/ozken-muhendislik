@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BoxContext } from "../Context";
 import { mobile } from "../responsive";
 import printer from "../images/3d.png";
-
+import disli from "../images/disli.png";
 import kalip from "../images/kalip.png";
 import aparat from "../images/aparat.png";
 import makine from "../images/makine.png";
@@ -144,7 +144,7 @@ const Info = () => {
         </TextArea>
       </Container>
       <Container style={{ display: box === "yedek" ? true : "none" }}>
-        <Image src="https://cdn.tridi.co/images/p-become-partner/alt_hizmet_torna.png?format=webp&width=1400&rmode=min" />
+        <Image src={disli} />
         <TextArea>
           <Header>Yedek Parça İmalatı</Header>
           <Text>

@@ -203,7 +203,9 @@ const Contact = () => {
           </ContactInfo>
           <Map>
             <Iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d190.4813629688114!2d29.095887821882023!3d40.193449150662026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1679248099107!5m2!1str!2str"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d298.0355155896664!2d29.095803928957874!3d40.19339472045505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f3fbb26cf47%3A0xbddeff7725eb6b10!2zw5Z6a2VuIE3DvGhlbmRpc2xpaw!5e0!3m2!1str!2str!4v1680346886074!5m2!1str!2str"
+              width="600"
+              height="450"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"

@@ -7,7 +7,7 @@ import logo from "../images/whlogo.png";
 import Hamburger from "hamburger-react";
 import { BoxContext } from "../Context";
 
-const Nav = styled.nav`
+const Nav = styled.header`
   width: 100%;
   height: 120px;
   display: flex;
@@ -16,6 +16,7 @@ const Nav = styled.nav`
   font-size: 1.2rem;
   /* background-color: #3d3d3d; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 600;
   ${mobile({
     textAlign: "center",
     height: "auto",

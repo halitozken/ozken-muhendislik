@@ -113,8 +113,9 @@ const AboutUs = () => {
         <Left>
           <Title>Özken Mühendislik</Title>
           <Text>
-            CNC İşleme, CAD - CAM - CNC Tasarım, Torna, Freze, 3D Tasarım ve
-            Baskı
+            Makine Tasarımı ve İmalatı, Kalıp Tasarımı ve İmalatı, Fikstür
+            Tasarımı ve İmalatı, Aparat Tasarımı ve İmalatı, Yedek Parça
+            İmalatı, 3D Tasarım ve Baskı
           </Text>
           <Link
             to="/iletisim"

@@ -5,12 +5,12 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { mobile } from "../responsive";
 
-const Container = styled.div`
+const Container = styled.footer`
   width: 100%;
   height: auto;
   background-color: #313131;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
   padding-top: 24px;
   padding-bottom: 12px;
 `;
