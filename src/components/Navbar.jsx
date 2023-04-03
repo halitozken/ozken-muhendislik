@@ -55,6 +55,7 @@ const MenuItem = styled.a`
 
 const HamburgerMenu = styled.div`
   display: none;
+  cursor: pointer;
   ${mobile({ display: "block" })};
 `;
 

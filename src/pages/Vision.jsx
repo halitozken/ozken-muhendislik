@@ -7,6 +7,7 @@ import { mobile } from "../responsive";
 import { motion } from "framer-motion/dist/framer-motion";
 import { BoxContext } from "../Context";
 import MobileMenu from "../components/MobileMenu";
+import PageInfo from "../components/PageInfo";
 
 const Container = styled.div`
   width: 100%;
@@ -17,10 +18,11 @@ const Container = styled.div`
 const AboutArea = styled.div`
   width: 100%;
   height: auto;
+  padding: 8% 0%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+
   ${mobile({ height: "auto", paddingBottom: "20px" })}
 `;
 
@@ -66,8 +68,7 @@ const Image = styled.img`
   ${mobile({
     width: "360px",
     height: "202px",
-    paddingTop: "20px",
-    paddingLeft: "0px",
+    paddingBottom: "28px",
   })}
 `;
 
@@ -78,12 +79,14 @@ const Mission = () => {
       <Container>
         <Headline />
         <Navbar />
+        <PageInfo />
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
         >
           <MobileMenu />
+
           <AboutArea>
             <Box>
               <Right>
