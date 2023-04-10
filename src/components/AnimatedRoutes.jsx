@@ -10,7 +10,7 @@ import Contact from "../pages/Contact";
 // import Projects from "../pages/Projects";
 import Services from "../pages/Services";
 
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = () => {
   const location = useLocation();

@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import cnc from "../images/cnc.png";
 import { Link } from "react-router-dom";
-import { mobile } from "../responsive";
+import { mobile, smallScreenMobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
   height: 75vh;
-
   display: flex;
 
   ${mobile({ height: "50vh" })}
+  ${smallScreenMobile({ height: "70vh" })}
 `;
 
 const AboutArea = styled.div`

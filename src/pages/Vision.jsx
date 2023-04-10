@@ -4,10 +4,11 @@ import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { BoxContext } from "../Context";
 import MobileMenu from "../components/MobileMenu";
 import PageInfo from "../components/PageInfo";
+import foto from "../images/foto.jpg";
 
 const Container = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const AboutArea = styled.div`
 `;
 
 const Box = styled.div`
-  width: 60%;
+  width: 70%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -61,8 +62,8 @@ const Right = styled.div``;
 const Image = styled.img`
   /* width: 360px;
   height: 203px; */
-  width: 570px;
-  height: 320px;
+  width: 580px;
+  height: 360px;
   padding-right: 2rem;
 
   ${mobile({
@@ -79,32 +80,40 @@ const Mission = () => {
       <Container>
         <Headline />
         <Navbar />
-        <PageInfo />
+
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
         >
           <MobileMenu />
-
+          <PageInfo />
           <AboutArea>
             <Box>
               <Right>
-                <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/ee6d81c58f.jpg" />
+                <Image src={foto} />
               </Right>
               <Left>
                 <Header>VİZYON</Header>
                 <Text>
-                  Hedefimiz; bilgimizi ve yaratıcılığımızı Sürekli olarak
-                  geliştirerek, müşteri memnuniyeti ve rekabet için etkin
-                  ürünler tasarlamaktır. İmalat prensibimiz İlk Seferde Doğru
-                  Yapmak ve “Sıfır Hata”dır. İmal etmekte olduğumuz ürünlerin
-                  zamanında, eksiksiz ve problemsiz olarak imalatı ve teslim
-                  edilmesi vazgeçilemez bir ilkedir. Özken Mühendislik, hatalar
-                  oluştuktan sonra düzeltmek yerine, bu hatalar oluşmadan
-                  önleyici tedbirleri alır, müşterisine daha iyi hizmet
-                  verebilmek için işlerinde sürekli iyileştirmeler ve teknolojik
-                  yatırımlar yapar.
+                  Özken Mühendislik, müşteri memnuniyetini ve ürün kalitesini
+                  sürekli geliştirmek amacıyla yaratıcılığını ve bilgisini
+                  kullanan bir şirkettir. İmalat prensipleri arasında "İlk
+                  Seferde Doğru Yapmak" ve "Sıfır Hata" yer almaktadır. Bu
+                  prensipler doğrultusunda, şirket ürünlerinin zamanında,
+                  eksiksiz ve problemsiz olarak imal edilmesi ve teslim
+                  edilmesini garanti etmektedir.
+                  <br />
+                  Hataları önlemek için önceden tedbirler alarak müşterisine en
+                  iyi hizmeti sunmak için çalışmaktadır. Şirket, sürekli
+                  iyileştirmeler ve teknolojik yatırımlar yaparak işlerini daha
+                  da geliştirmekte ve müşteri beklentilerini karşılamak için
+                  çalışmaktadır.
+                  <br />
+                  Bu hedeflere ulaşmak için, şirketin vizyonu, mükemmellik ve
+                  yenilikçilik üzerine kuruludur. Müşterilerin talepleri
+                  doğrultusunda özelleştirilmiş çözümler sunmakta ve teknolojik
+                  yeniliklerle sürekli olarak kendisini geliştirmektedir.
                 </Text>
               </Left>
             </Box>

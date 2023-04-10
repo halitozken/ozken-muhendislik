@@ -17,7 +17,7 @@ display:flex;
 justify-content: center
 align-items: center;
 margin-left: 32px;
-${mobile({ display: "none" })}
+${mobile({ margin: "0px" })} */
 
 `;
 
@@ -46,6 +46,8 @@ const Header = styled.h2`
   padding-left: 94px;
   padding-bottom: 24px;
   text-decoration-line: underline;
+
+  ${mobile({ margin: "0px", padding: "0px", paddingBottom: "18px" })}
 `;
 
 const TextArea = styled.div`
@@ -66,6 +68,8 @@ const Text = styled.p`
   letter-spacing: 1px;
   inline-size: 85%;
   transition: all 1s;
+  /* text-align: justify; */
+  ${mobile({ fontSize: "18px" })}
 `;
 
 const Info = () => {

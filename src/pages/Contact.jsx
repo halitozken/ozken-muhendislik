@@ -4,13 +4,16 @@ import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import MobileMenu from "../components/MobileMenu";
 import { BoxContext } from "../Context";
+import PageInfo from "../components/PageInfo";
+import { FaRegAddressCard, FaStoreAlt, FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const Container = styled.div`
   width: auto;
-  height: "auto" 
+  height: "auto";
   overflow: hidden;
 `;
 
@@ -18,7 +21,8 @@ const ContactInfo = styled.div`
   width: 100%;
   height: 70vh;
   display: flex;
-
+  margin-top: 50px;
+  margin-bottom: 50px;
   ${mobile({ height: "auto", flexDirection: "column" })}
 `;
 
@@ -29,6 +33,7 @@ const Left = styled.div`
   align-items: center;
   font-weight: 300;
   font-size: 24px;
+
   ${mobile({ fontSize: "18px", paddingTop: "25px" })}
 `;
 
@@ -44,6 +49,9 @@ const Right = styled.div`
 const Address = styled.div``;
 
 const Header = styled.h2`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   ${mobile({ fontSize: "20px" })}
 `;
 
@@ -51,6 +59,9 @@ const Text = styled.p`
   font-weight: 400;
   padding: 5px;
   letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Form = styled.form`
@@ -102,7 +113,6 @@ const Button = styled.button`
   }
 `;
 const FormHeader = styled.h2`
-  color:#F0542D
   margin: 10px;
 
   ${mobile({ textAlign: "center" })}
@@ -125,9 +135,7 @@ const TextArea = styled.textarea`
   ${mobile({ fontSize: "18px", width: "300px" })}
 `;
 
-const Map = styled.div`
-  ${mobile({ paddingTop: "25px", paddingBottom: "25px" })}
-`;
+const Map = styled.div``;
 
 const Iframe = styled.iframe`
   width: 100vw;
@@ -145,21 +153,45 @@ const Contact = () => {
       <Container>
         <Headline />
         <Navbar />
+
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
         >
           <MobileMenu />
+          <PageInfo />
           <ContactInfo>
             <Left>
               <Address>
-                <Header>İletişim:</Header>
-                <Text>Duaçınarı Mh.</Text>
-                <Text>Uslu Çk. No:1 </Text>
-                <Text>Yıldırım / Bursa</Text>
-                <Text>Telefon: +90 224 363 83 15</Text>
-                <Text>info@ozkenmuhendislik.com</Text>
+                <Header>
+                  <FaRegAddressCard style={{ paddingRight: "12px" }} />
+                  İletişim:
+                </Header>
+                <br />
+                <br />
+                <Text>
+                  <FaStoreAlt style={{ paddingRight: "18px" }} />
+                  Duaçınarı Mh.
+                </Text>
+                <br />
+                <Text style={{ paddingLeft: "48px" }}>Uslu Çk. No:1 </Text>
+                <br />
+                <Text style={{ paddingLeft: "48px" }}>Yıldırım / Bursa</Text>
+                <br />
+                <br />
+                <Text>
+                  <FaPhoneAlt style={{ paddingRight: "18px" }} />
+                  Telefon: +90 224 363 83 15
+                </Text>
+                <br />
+                <br />
+                <Text>
+                  <MdOutlineEmail
+                    style={{ paddingRight: "18px", fontSize: "30px" }}
+                  />
+                  info@ozkenmuhendislik.com
+                </Text>
               </Address>
             </Left>
             <Right>

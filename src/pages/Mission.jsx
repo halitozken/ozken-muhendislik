@@ -4,10 +4,11 @@ import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { BoxContext } from "../Context";
 import MobileMenu from "../components/MobileMenu";
 import PageInfo from "../components/PageInfo";
+import foto1 from "../images/banners.jpg";
 
 const Container = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const AboutArea = styled.div`
 `;
 
 const Box = styled.div`
-  width: 60%;
+  width: 70%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -61,8 +62,8 @@ const Right = styled.div``;
 const Image = styled.img`
   /* width: 360px;
   height: 203px; */
-  width: 570px;
-  height: 320px;
+  width: 580px;
+  height: 360px;
   padding-right: 2rem;
 
   ${mobile({
@@ -79,31 +80,36 @@ const Mission = () => {
       <Container>
         <Headline />
         <Navbar />
-        <PageInfo />
+
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
         >
           <MobileMenu />
-
+          <PageInfo />
           <AboutArea>
             <Box>
               <Right>
-                <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/ee6d81c58f.jpg" />
+                <Image src={foto1} />
               </Right>
               <Left>
                 <Header>MİSYON</Header>
                 <Text>
-                  Müşteri odaklığı üzerine kurulmuş olup, bunu sağlamak için;
-                  müşteri şartlarının yerine getirilmesi ve müşteri
-                  memnuniyetinin sağlanmasını esas almıştır. Amacımız
-                  müşterilerimizin beklentilerine tamamıyla cevap verebilmek,
-                  firmanızın rekabet ve gelişim gücünü arttırabilmektir.
-                  Firmamız, hedefleri tespit eder ve kalite politikalarının
+                  Bizim misyonumuz, müşteri odaklı bir yaklaşımla hizmet
+                  vererek, müşteri şartlarını yerine getirmek ve müşteri
+                  memnuniyetini en üst düzeyde tutarak, müşterilerimizin
+                  beklentilerine tamamıyla cevap vermek ve firmanızın rekabet ve
+                  gelişim gücünü arttırmaktır. <br />
+                  Firmamız, hedefleri belirleyerek, kalite politikalarının
                   uygulanması ve geliştirilmesi için planlama yapar ve gerekli
-                  desteği sağlar. Takım ruhu içerisinde şirket ve birim
-                  hedeflerine ulaşmak için çalışırız.
+                  desteği sağlar. Çalışanlarımız, takım ruhu içerisinde şirket
+                  ve birim hedeflerine ulaşmak için bir araya gelirler. Müşteri
+                  memnuniyeti bizim önceliğimizdir ve bunu sağlamak için her
+                  zaman kalite standartlarımızı en üst seviyede tutarız.
+                  Müşterilerimizin ihtiyaçlarını anlamak ve onların taleplerine
+                  tam olarak cevap vermek için sürekli olarak kendimizi
+                  geliştiririz.
                 </Text>
               </Left>
             </Box>

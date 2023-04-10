@@ -1,67 +1,3 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styled from "styled-components";
-import { mobile } from "../responsive";
-
-import foto1 from "../images/pexels-alex-11951233-min.jpg";
-import foto2 from "../images/pexels-daniel-smyth-10406128-min.jpg";
-import foto3 from "../images/pexels-pixabay-50691-min.jpg";
-import foto4 from "../images/foto4-min.jpeg";
-
-const Container = styled.div`
-  width: 100%;
-  background-color: #f8f8f8;
-
-  ${mobile({ height: "38vh" })}
-`;
-const ImageArea = styled.div``;
-
-const Image = styled.img`
-  width: 100%;
-  height: 75vh;
-  margin: auto;
-  object-fit: cover;
-  pointer-events: none;
-  ${mobile({ width: "100%", height: "40vh" })}
-`;
-
-export default class LazyLoad extends Component {
-  render() {
-    const settings = {
-      dots: false,
-      lazyLoad: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      initialSlide: 2,
-      adaptiveHeight: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    };
-    return (
-      <Container>
-        <Slider {...settings}>
-          <ImageArea>
-            <Image src={foto1}></Image>
-          </ImageArea>
-          <ImageArea>
-            <Image src={foto2} />
-          </ImageArea>
-          <ImageArea>
-            <Image src={foto3} />
-          </ImageArea>
-          <ImageArea>
-            <Image src={foto4} />
-          </ImageArea>
-        </Slider>
-      </Container>
-    );
-  }
-}
-
 // import React, { useState } from "react";
 // import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 
@@ -83,7 +19,7 @@ export default class LazyLoad extends Component {
 // const Arrow = styled.div`
 //   width: 50px;
 //   height: 50px;
-//   background-color: #fff7f7;
+//   background-color: #ffffff;
 //   border-radius: 50%;
 //   display: flex;
 //   align-items: center;
@@ -102,7 +38,7 @@ export default class LazyLoad extends Component {
 // const Wrapper = styled.div`
 //   height: 100%;
 //   display: flex;
-//   transition: all 1.5s ease;
+//   transition: all 1s ease;
 //   transform: translateX(${(props) => props.slideIndex * -100}vw);
 // `;
 
@@ -114,39 +50,31 @@ export default class LazyLoad extends Component {
 //   background-color: #${(props) => props.bg};
 // `;
 
-// const ImgContainer = styled.div`
-//   width: 100%;
-//   height: 140vh;
+// const InfoContainer = styled.div`
+//   flex: 1;
+//   padding: 70px;
+//   color: white;
 // `;
 
-// const Image = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   ${mobile({ height: "50%", objectFit: "cover" })}
+// const Title = styled.h1`
+//   font-size: 70px;
 // `;
 
-// // const InfoContainer = styled.div`
-// //   flex: 1;
-// //   padding: 50px;
-// // `;
+// const Desc = styled.p`
+//   margin: 50px 0px;
+//   font-size: 20px;
+//   font-weight: 500;
+//   letter-spacing: 3px;
+// `;
 
-// // const Title = styled.h1`
-// //   font-size: 70px;
-// // `;
-
-// // const Desc = styled.p`
-// //   margin: 50px 0px;
-// //   font-size: 20px;
-// //   font-weight: 500;
-// //   letter-spacing: 3px;
-// // `;
-
-// // const Button = styled.button`
-// //   padding: 10px;
-// //   font-size: 20px;
-// //   background-color: transparent;
-// //   cursor: pointer;
-// // `;
+// const Button = styled.button`
+//   padding: 10px;
+//   font-size: 20px;
+//   border: 1px solid white;
+//   background-color: transparent;
+//   color: white;
+//   cursor: pointer;
+// `;
 
 // const Slider = () => {
 //   const [slideIndex, setSlideIndex] = useState(0);
@@ -165,15 +93,23 @@ export default class LazyLoad extends Component {
 //       </Arrow>
 //       <Wrapper slideIndex={slideIndex}>
 //         {sliderItems.map((item) => (
-//           <Slide bg={item.bg} key={item.id}>
-//             <ImgContainer>
+//           <Slide
+//             style={{
+//               backgroundImage: `url(${item.bg})`,
+//               backgroundSize: "cover",
+//               backgroundPosition: "center",
+//               backgroundRepeat: "no-repeat",
+//             }}
+//             key={item.id}
+//           >
+//             {/* <ImgContainer>
 //               <Image src={item.img} />
-//             </ImgContainer>
-//             {/* <InfoContainer>
+//             </ImgContainer> */}
+//             <InfoContainer>
 //               <Title>{item.title}</Title>
 //               <Desc>{item.desc}</Desc>
-//               <Button>SHOW NOW</Button>
-//             </InfoContainer> */}
+//               <Button>İletişim</Button>
+//             </InfoContainer>
 //           </Slide>
 //         ))}
 //       </Wrapper>
@@ -185,3 +121,132 @@ export default class LazyLoad extends Component {
 // };
 
 // export default Slider;
+
+import React, { Component } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styled from "styled-components";
+import { mobile } from "../responsive";
+
+import foto1 from "../images/pexels-alex-11951233-min.jpg";
+import foto2 from "../images/pexels-daniel-smyth-10406128-min.jpg";
+import foto3 from "../images/pexels-pixabay-50691-min.jpg";
+
+import { Link } from "react-router-dom";
+
+const Container = styled.div`
+  width: 100%;
+  background-color: #f8f8f8;
+
+  ${mobile({ height: "38vh" })}
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 75vh;
+  margin: auto;
+  object-fit: cover;
+  pointer-events: none;
+
+  ${mobile({ width: "100%", height: "40vh" })}
+`;
+
+const Title = styled.h1`
+  font-size: 70px;
+  color: #ffffff;
+  ${mobile({ fontSize: "34px" })}
+`;
+
+const Desc = styled.p`
+  margin: 20px 0px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  ${mobile({ fontSize: "20px", margin: "10px 0px" })}
+`;
+
+const Button = styled.button`
+  color: white;
+  padding: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: #0086bc;
+    border: 1px solid #0086bc;
+  }
+
+  ${mobile({ fontSize: "14px" })}
+`;
+
+const InfoArea = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 80px;
+
+  ${mobile({ left: "8px" })}
+`;
+
+const Slide = styled.div`
+  position: relative;
+`;
+
+export default class SimpleSlider extends Component {
+  render() {
+    const settings = {
+      dots: false,
+      lazyLoad: true,
+      infinite: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      initialSlide: 2,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 2600,
+    };
+    return (
+      <Container>
+        <Slider {...settings}>
+          <Slide>
+            <Image src={foto2} />
+            <InfoArea>
+              <Title>Özken Mühendislik</Title>
+              <Desc>Teknoloji ile Geleceği Şekillendiriyoruz</Desc>
+              <Link to="/iletisim">
+                <Button>İletişim</Button>
+              </Link>
+            </InfoArea>
+          </Slide>
+          <Slide>
+            <Image src={foto1} />
+            <InfoArea>
+              <Title>Özken Mühendislik</Title>
+              <Desc>Kalite ile Memnuniyeti Birleştiriyoruz</Desc>
+              <Link to="/iletisim">
+                <Button>İletişim</Button>
+              </Link>
+            </InfoArea>
+          </Slide>
+          <Slide>
+            <Image src={foto3} />
+            <InfoArea>
+              <Title>Özken Mühendislik</Title>
+              <Desc>Güvenilir Çözümler, Düşük Maliyetler</Desc>
+              <Link to="/iletisim">
+                <Button>İletişim</Button>
+              </Link>
+            </InfoArea>
+          </Slide>
+        </Slider>
+      </Container>
+    );
+  }
+}

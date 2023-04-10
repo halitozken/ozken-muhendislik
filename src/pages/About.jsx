@@ -4,14 +4,16 @@ import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import MobileMenu from "../components/MobileMenu";
 import { BoxContext } from "../Context";
 import PageInfo from "../components/PageInfo";
+import foto from "../images/banner2.jpg";
 
 const Container = styled.div`
   width: 100%;
   height: auto;
+  overflow: hidden;
 `;
 
 const AboutArea = styled.div`
@@ -26,10 +28,11 @@ const AboutArea = styled.div`
 `;
 
 const Box = styled.div`
-  width: 60%;
+  width: 70%;
   height: auto;
   display: flex;
   justify-content: center;
+
   ${mobile({
     width: "92%",
     height: "auto",
@@ -60,9 +63,9 @@ const Right = styled.div``;
 const Image = styled.img`
   /* width: 360px;
   height: 203px; */
-  width: 570px;
-  height: 320px;
-  padding-left: 2rem;
+  width: 580px;
+  height: 360px;
+  padding-left: 1rem;
 
   ${mobile({
     width: "360px",
@@ -80,13 +83,13 @@ const About = () => {
         <Headline />
         <Navbar />
 
-        <PageInfo />
         <motion.div
           initial={{ width: "0" }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
         >
           <MobileMenu />
+          <PageInfo />
           <AboutArea>
             <Box>
               <Left>
@@ -105,7 +108,7 @@ const About = () => {
                 </Text>
               </Left>
               <Right>
-                <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/c09adf03ee.jpg" />
+                <Image src={foto} />
               </Right>
             </Box>
           </AboutArea>

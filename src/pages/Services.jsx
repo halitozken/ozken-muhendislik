@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 // import freze from "../images/freze.png";
 import printer from "../images/3d.png";
 import { mobile } from "../responsive";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import MobileMenu from "../components/MobileMenu";
 import { BoxContext } from "../Context";
 import kalip from "../images/kalip.png";
@@ -14,6 +14,7 @@ import aparat from "../images/aparat.png";
 import makine from "../images/makine.png";
 import fikstür from "../images/fixture.png";
 import disli from "../images/disli.png";
+import PageInfo from "../components/PageInfo";
 
 const Container = styled.div`
   width: 70%;
@@ -21,12 +22,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  margin-top: 60px;
+  margin-bottom: 60px;
   ${mobile({ width: "100%" })}
 `;
 
 const ServicesArea = styled.div`
   width: 100%;
   height: auto;
+  overflow: hidden;
 `;
 
 const FirstLine = styled.div`
@@ -56,7 +61,7 @@ const Box = styled.div`
 const Image = styled.img`
   width: 286px;
   height: 204px;
-pointer-events: none;
+  pointer-events: none;
   /* --c: #0086bc; /* the border color */
   --b: 5px; /* the border thickness*/
   --g: 5px; /* the gap on hover */
@@ -76,7 +81,7 @@ pointer-events: none;
   &:hover {
     --_i: 100%;
     transition: 0.3s, background-size 0.3s 0.3s;
-  } */
+  }
 
   ${mobile({ width: "360px", height: "240px" })}
 `;
@@ -99,12 +104,14 @@ const Services = () => {
     <BoxContext.Provider value={{ isOpen, setOpen }}>
       <Headline />
       <Navbar />
+
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
       >
         <MobileMenu />
+        <PageInfo />
         <Container>
           <ServicesArea>
             <FirstLine>

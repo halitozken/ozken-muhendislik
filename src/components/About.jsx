@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import foto1 from "../images/banner2.jpg";
+import foto2 from "../images/banners.jpg";
+import foto3 from "../images/foto.jpg";
+import foto4 from "../images/plan.jpg";
 
 const Container = styled.div`
   width: 100%;
@@ -53,8 +57,6 @@ const BoxMenu = styled.div`
 
 const Box = styled.div`
   display: flex;
-  backgorund-color: black;
-
   ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
@@ -77,7 +79,7 @@ const Image = styled.img`
   height: 350px;
   padding-left: 15px;
 
-  ${mobile({ width: "350px", height: "320px", paddingLeft: "0px" })}
+  ${mobile({ width: "350px", height: "300px", paddingLeft: "0px" })}
 `;
 
 const About = () => {
@@ -140,7 +142,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/c09adf03ee.jpg" />
+              <Image src={foto1} />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "mission" ? true : "none" }}>
@@ -157,7 +159,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/ee6d81c58f.jpg" />
+              <Image src={foto2} />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "vision" ? true : "none" }}>
@@ -175,7 +177,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/d43383e7da.jpg" />
+              <Image src={foto3} />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "quality" ? true : "none" }}>
@@ -199,7 +201,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src="https://www.aydinkalipsanayi.com/Admin/Sayfalar/Galeri/e44c551357.jpg" />
+              <Image src={foto4} />
             </Right>
           </Box>
         </InfoArea>

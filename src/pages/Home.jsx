@@ -10,7 +10,7 @@ import AboutUs from "../components/AboutUs";
 import Feature from "../components/Feature";
 import About from "../components/About";
 
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import MobileMenu from "../components/MobileMenu";
 
 const Container = styled.div`
@@ -26,8 +26,6 @@ const Home = () => {
     setSelectedBox(data);
   };
 
-  console.log(isOpen);
-
   return (
     <BoxContext.Provider value={{ selectedBox, choosenBox, isOpen, setOpen }}>
       <Container>
@@ -36,7 +34,7 @@ const Home = () => {
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
         >
           <MobileMenu />
 

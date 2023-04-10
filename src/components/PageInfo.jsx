@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../images/banners.jpg";
+import banner from "../images/banner1.jpg";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { ImHome3 } from "react-icons/im";
 import { mobile } from "../responsive";
@@ -12,19 +12,25 @@ const Container = styled.div`
     url(${banner});
   background-size: cover;
   background-position: center;
-  width: 100vw;
-  height: 160px;
-  ${mobile({ display: "none" })}
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.99) 0px 5px 15px;
+  ${mobile({ height: "120px" })}
 `;
 
 const FirstLine = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   padding-bottom: 10px;
   text-transform: capitalize;
+
+  ${mobile({ fontSize: "14px" })}
 `;
 
 const SecondLine = styled.div`
   font-size: 45px;
+  font-weight: 500;
+  ${mobile({ fontSize: "32px" })}
 `;
 
 const PageInfo = () => {
@@ -45,11 +51,17 @@ const PageInfo = () => {
   if (location.pathname === "/hakkimizda") {
     page = "Hakkımızda";
   } else if (location.pathname === "/misyon") {
-    page = "MİSYON";
+    page = "Misyon";
   } else if (location.pathname === "/vizyon") {
-    page = "VİZYON";
+    page = "Vizyon";
   } else if (location.pathname === "/kalite") {
-    page = "KALİTE POLİTİKAMIZ";
+    page = "Kalite Politikamız";
+  } else if (location.pathname === "/hizmetler") {
+    page = "Hizmetlerimiz";
+  } else if (location.pathname === "/galeri") {
+    page = "Galeri";
+  } else if (location.pathname === "/iletisim") {
+    page = "İletişim";
   }
 
   let pagePath = "";
@@ -62,11 +74,17 @@ const PageInfo = () => {
     pagePath = "Vizyon";
   } else if (location.pathname === "/kalite") {
     pagePath = "Kalite Politikamız";
+  } else if (location.pathname === "/hizmetler") {
+    pagePath = "Hizmetlerimiz";
+  } else if (location.pathname === "/galeri") {
+    pagePath = "Galeri";
+  } else if (location.pathname === "/iletisim") {
+    pagePath = "İletişim";
   }
 
   const LinkStyle = {
     textDecoration: "none",
-    color: "inherit",
+    transition: "0.3s",
     color: isHover ? "#30c4ff" : "white",
   };
 
@@ -75,7 +93,7 @@ const PageInfo = () => {
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        exit={{ y: window.innerWidth, transition: { duration: 0.8 } }}
+        exit={{ y: window.innerWidth, transition: { duration: 0.6 } }}
         style={{
           position: "relative",
           top: "25%",

@@ -35,7 +35,6 @@ const MobileMenuItem = styled.div`
 
 const MobileMenu = () => {
   const context = useContext(BoxContext);
-  console.log(context.isOpen);
 
   return (
     <Container
