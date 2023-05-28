@@ -119,12 +119,12 @@ const Navbar = (props) => {
             <MenuItem> Hizmetlerimiz</MenuItem>
           </Link>
 
-          <Link
+          {/* <Link
             to="/galeri"
             style={{ textDecoration: "none", color: "inherit" }}
           >
             <MenuItem> Galeri </MenuItem>
-          </Link>
+          </Link> */}
 
           <Link
             to="/iletisim"

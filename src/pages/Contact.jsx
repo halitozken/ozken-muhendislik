@@ -10,6 +10,7 @@ import { BoxContext } from "../Context";
 import PageInfo from "../components/PageInfo";
 import { FaRegAddressCard, FaStoreAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import { HiDevicePhoneMobile } from "react-icons/hi2";
 
 const Container = styled.div`
   width: auto;
@@ -182,7 +183,23 @@ const Contact = () => {
                 <br />
                 <Text>
                   <FaPhoneAlt style={{ paddingRight: "18px" }} />
-                  Telefon: +90 224 363 83 15
+                  Telefon : +90 224 363 83 15
+                </Text>
+                <br />
+                <br />
+                <Text>
+                  <HiDevicePhoneMobile
+                    style={{ paddingRight: "18px", fontSize: "32px" }}
+                  />
+                  GSM 1 : +90 546 719 09 87
+                </Text>
+                <br />
+                <br />
+                <Text>
+                  <HiDevicePhoneMobile
+                    style={{ paddingRight: "18px", fontSize: "32px" }}
+                  />
+                  GSM 2 : +90 532 468 51 33
                 </Text>
                 <br />
                 <br />

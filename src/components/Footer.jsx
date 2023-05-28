@@ -4,6 +4,7 @@ import { ImLocation } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { mobile } from "../responsive";
+import { HiDevicePhoneMobile } from "react-icons/hi2";
 
 const Container = styled.footer`
   width: 100%;
@@ -33,7 +34,7 @@ const ContactItem = styled.div`
   font-size: 14px;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  color: #c7c7c7;
+  color: #d7d7d7;
 `;
 
 const List = styled.ul`
@@ -42,7 +43,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin-bottom: 10px;
-  color: #c7c7c7;
+  color: #d7d7d7;
   font-size: 14px;
 `;
 
@@ -56,7 +57,7 @@ const Copyright = styled.div`
   font-size: 12px;
   padding-top: 12px;
   text-align: center;
-  color: #c7c7c7;
+  color: #d7d7d7;
 `;
 
 const Text = styled.h3`
@@ -99,6 +100,18 @@ const Footer = () => {
           <ContactItem>
             <BsFillTelephoneFill style={{ marginRight: "10px" }} />
             +90 224 363 83 15
+          </ContactItem>
+          <ContactItem>
+            <HiDevicePhoneMobile
+              style={{ marginRight: "10px", fontSize: "18px" }}
+            />
+            +90 546 719 09 87
+          </ContactItem>
+          <ContactItem>
+            <HiDevicePhoneMobile
+              style={{ marginRight: "10px", fontSize: "18px" }}
+            />
+            +90 532 468 51 33
           </ContactItem>
           <ContactItem>
             <GrMail style={{ marginRight: "10px" }} />
