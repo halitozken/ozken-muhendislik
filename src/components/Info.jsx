@@ -12,7 +12,6 @@ import fikstür from "../images/fixture.png";
 const InfoArea = styled.div`
   width: 150%;
   height: auto;
-  background-color: e8e8e88d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +27,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 45px;
-  transition: all 1s;
-
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 `;
 
 const Image = styled.img`
