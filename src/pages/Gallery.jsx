@@ -23,7 +23,6 @@ const Gallery = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
-      <Headline />
       <Navbar />
 
       <motion.div

@@ -29,7 +29,6 @@ const Home = () => {
   return (
     <BoxContext.Provider value={{ selectedBox, choosenBox, isOpen, setOpen }}>
       <Container>
-        <Headline />
         <Navbar />
         <motion.div
           initial={{ width: 0 }}

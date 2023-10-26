@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
@@ -11,6 +11,7 @@ import PageInfo from "../components/PageInfo";
 import { FaRegAddressCard, FaStoreAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiDevicePhoneMobile } from "react-icons/hi2";
+import emailjs from "@emailjs/browser";
 
 const Container = styled.div`
   width: auto;
@@ -148,11 +149,46 @@ const Iframe = styled.iframe`
 
 const Contact = () => {
   const [isOpen, setOpen] = useState(false);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+  const [subject, setSubject] = useState();
 
+  const form = useRef();
+
+  const nameInput = (e) => setName(e.target.value);
+  const mailInput = (e) => setEmail(e.target.value);
+  const messageInput = (e) => setMessage(e.target.value);
+  const subjectInput = (e) => setSubject(e.target.value);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_6y39shq",
+        "template_j6pkjle",
+        form.current,
+        "mVHveGMU4dJP0MJ14"
+      )
+      .then(
+        () => {
+          setName("");
+          setEmail("");
+          setMessage("");
+          setSubject("");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  console.log(name);
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
       <Container>
-        <Headline />
+  
         <Navbar />
 
         <motion.div
@@ -212,29 +248,35 @@ const Contact = () => {
               </Address>
             </Left>
             <Right>
-              <Form action="https://formsubmit.co/el/kusepo" method="POST">
+              <Form ref={form} onSubmit={sendEmail}>
                 <FormHeader>Bizimle iletişime geçin...</FormHeader>
                 <Input
                   required
                   type="text"
-                  name="fname"
-                  placeholder="Ad"
+                  name="user_name"
+                  placeholder="Ad Soyad"
+                  onInput={nameInput}
+                  value={name}
                 ></Input>
                 <br />
 
                 <Input
                   required
                   type="text"
-                  name="lname"
-                  placeholder="Soyad"
-                ></Input>
-                <br />
-
-                <Input
-                  required
-                  type="text"
-                  name="mail"
+                  name="user_email"
                   placeholder="Mail"
+                  onInput={mailInput}
+                  value={email}
+                ></Input>
+                <br />
+
+                <Input
+                  required
+                  type="text"
+                  name="subject"
+                  placeholder="Konu"
+                  onInput={subjectInput}
+                  value={subject}
                 ></Input>
                 <br />
 
@@ -243,6 +285,8 @@ const Contact = () => {
                   name="message"
                   placeholder="Mesajınız yazın..."
                   rows="5"
+                  onInput={messageInput}
+                  value={message}
                 ></TextArea>
                 <br />
 

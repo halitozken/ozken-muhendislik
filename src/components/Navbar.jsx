@@ -17,6 +17,7 @@ const Nav = styled.header`
   /* background-color: #3d3d3d; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-weight: 600;
+
   ${mobile({
     textAlign: "center",
     height: "auto",
@@ -118,13 +119,6 @@ const Navbar = (props) => {
           >
             <MenuItem> Hizmetlerimiz</MenuItem>
           </Link>
-
-          {/* <Link
-            to="/galeri"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <MenuItem> Galeri </MenuItem>
-          </Link> */}
 
           <Link
             to="/iletisim"

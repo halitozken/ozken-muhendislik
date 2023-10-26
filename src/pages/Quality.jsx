@@ -78,7 +78,7 @@ const Mission = () => {
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
       <Container>
-        <Headline />
+
         <Navbar />
 
         <motion.div

@@ -80,7 +80,6 @@ const About = () => {
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
       <Container>
-        <Headline />
         <Navbar />
 
         <motion.div
