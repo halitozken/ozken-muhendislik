@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
@@ -9,11 +8,13 @@ import { BoxContext } from "../Context";
 import MobileMenu from "../components/MobileMenu";
 import PageInfo from "../components/PageInfo";
 import foto from "../images/plan.jpg";
+import { Helmet } from "react-helmet-async";
 
 const Container = styled.div`
   width: 100%;
   height: auto;
   overflow: hidden;
+  position: relative;
 `;
 
 const AboutArea = styled.div`
@@ -42,7 +43,7 @@ const Box = styled.div`
 
 const Left = styled.div``;
 
-const Header = styled.div`
+const Header = styled.h1`
   font-size: 28px;
   font-weight: 800;
   text-decoration: underline #0086bc 5px;
@@ -77,14 +78,23 @@ const Mission = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
+      <Helmet>
+        <meta charset="utf-8" />
+        <title>Özken Mühendislik | Kalite Politikamız</title>
+        <meta
+          name="description"
+          content="Müşteri odaklığı üzerine kurulmuş olup, bunu sağlamak için;
+          müşteri şartlarının yerine getirilmesi ve müşteri memnuniyetinin sağlanmasını esas almıştır. "
+        />
+        <link rel="canonical" href={`https://ozkenmuhendislik.com/kalite`} />
+      </Helmet>
       <Container>
-
         <Navbar />
 
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
           <MobileMenu />
           <PageInfo />

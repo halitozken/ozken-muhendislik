@@ -33,7 +33,6 @@ const Headline = () => {
   return (
     <Container>
       <Left>Duaçınarı Mh. Uslu Çk. No:1 Yıldırım / Bursa</Left>
-
       <Right>
         <HiDevicePhoneMobile style={{ fontSize: "18px", marginRight: "8px" }} />
         +90 546 719 09 87

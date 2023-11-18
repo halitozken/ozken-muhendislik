@@ -60,7 +60,7 @@ const Copyright = styled.div`
   color: #d7d7d7;
 `;
 
-const Text = styled.h3`
+const Text = styled.h2`
   margin-left: 40px;
   margin-bottom: 16px;
   border-bottom: 1px solid white;
@@ -71,7 +71,7 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.h2``;
+const Logo = styled.h1``;
 
 const Footer = () => {
   return (

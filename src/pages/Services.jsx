@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 // import freze from "../images/freze.png";
@@ -15,16 +14,14 @@ import makine from "../images/makine.png";
 import fikstür from "../images/fixture.png";
 import disli from "../images/disli.png";
 import PageInfo from "../components/PageInfo";
+import { Helmet } from "react-helmet-async";
 
 const Container = styled.div`
-  width: 70%;
+  width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  position: relative;
+
   ${mobile({ width: "100%" })}
 `;
 
@@ -86,7 +83,7 @@ const Image = styled.img`
   ${mobile({ width: "360px", height: "240px" })}
 `;
 
-const ServiceName = styled.h2`
+const ServiceName = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,16 +99,31 @@ const Services = () => {
 
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
-      <Navbar />
+      <Helmet>
+        <meta charset="utf-8" />
+        <title>Özken Mühendislik | Hizmetlerimiz</title>
+        <meta
+          name="description"
+          content="Makine Tasarımı ve İmalatı,
+          Kalıp Tasarımı ve İmalatı,
+          Fikstür Tasarımı ve İmalatı,
+          Aparat Tasarımı ve İmalatı,
+          Yedek Parça İmalatı,
+          3D Tasarım ve Baskı, CNC, Torna"
+        />
+        <link rel="canonical" href={`https://ozkenmuhendislik.com/hizmetler`} />
+      </Helmet>
 
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: "100%" }}
-        exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
-      >
-        <MobileMenu />
-        <PageInfo />
-        <Container>
+      <Container>
+        <Navbar />
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+        >
+          <MobileMenu />
+          <PageInfo />
+
           <ServicesArea>
             <FirstLine>
               <Box>
@@ -143,9 +155,9 @@ const Services = () => {
               </Box>
             </SecondLine>
           </ServicesArea>
-        </Container>
-      </motion.div>
-      <Footer />
+        </motion.div>
+        <Footer />
+      </Container>
     </BoxContext.Provider>
   );
 };

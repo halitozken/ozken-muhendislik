@@ -16,6 +16,7 @@ const Container = styled.div`
   height: 140px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.99) 0px 5px 15px;
+
   ${mobile({ height: "120px" })}
 `;
 
@@ -30,6 +31,7 @@ const FirstLine = styled.div`
 const SecondLine = styled.div`
   font-size: 45px;
   font-weight: 500;
+
   ${mobile({ fontSize: "32px" })}
 `;
 
@@ -110,7 +112,7 @@ const PageInfo = () => {
           >
             <ImHome3 style={{ paddingRight: "4px" }} />
             Anasayfa
-          </Link>{" "}
+          </Link>
           / {pagePath}
         </FirstLine>
         <SecondLine>{page}</SecondLine>

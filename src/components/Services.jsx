@@ -10,7 +10,7 @@ import makine from "../images/makine.png";
 import fikstür from "../images/fixture.png";
 import disli from "../images/disli.png";
 
-const ServicesArea = styled.div`
+const ServicesArea = styled.section`
   width: 100%;
   height: auto;
   background-color: #f8f8f8;
@@ -94,7 +94,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={makine}></Image>
+            <Image src={makine} alt="Makine Tasarımı ve İmalatı"></Image>
 
             <Title>Makine Tasarımı ve İmalatı</Title>
           </Box>
@@ -104,7 +104,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={kalip}></Image>
+            <Image src={kalip} alt="Kalıp Tasarımı ve İmalatı"></Image>
             <Title>Kalıp Tasarımı ve İmalatı</Title>
           </Box>
           <Box
@@ -113,7 +113,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={fikstür}></Image>
+            <Image src={fikstür} alt="Fikstür Tasarımı ve İmalatı"></Image>
             <Title>Fikstür Tasarımı ve İmalatı</Title>
           </Box>
           <Box
@@ -122,7 +122,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={aparat}></Image>
+            <Image src={aparat} alt="Aparat Tasarımı ve İmalatı"></Image>
             <Title>Aparat Tasarımı ve İmalatı</Title>
           </Box>
           <Box
@@ -131,7 +131,7 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={disli}></Image>
+            <Image src={disli} alt="Yedek Parça İmalatı"></Image>
             <Title>Yedek Parça İmalatı</Title>
           </Box>
           <Box
@@ -140,7 +140,10 @@ const Services = () => {
               context.choosenBox(e.target.className.split(" ")[2])
             }
           >
-            <Image src={printer}></Image>
+            <Image
+              src={printer}
+              alt="3D Tasarım ve Baskı - Creality K1 Max"
+            ></Image>
             <Title>3D Tasarım ve Baskı</Title>
           </Box>
         </BoxArea>

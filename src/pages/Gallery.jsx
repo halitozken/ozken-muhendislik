@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -28,7 +27,7 @@ const Gallery = () => {
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
       >
         <MobileMenu />
         <PageInfo />

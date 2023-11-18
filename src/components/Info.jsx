@@ -96,7 +96,7 @@ const Info = () => {
           display: box === "kalip" ? true : "none",
         }}
       >
-        <Image src={kalip} />
+        <Image src={kalip} alt="Kalıp Tasarımı ve İmalatı" />
         <TextArea>
           <Header>Kalıp Tasarımı ve İmalatı</Header>
 
@@ -112,7 +112,7 @@ const Info = () => {
         </TextArea>
       </Container>
       <Container style={{ display: box === "fikstür" ? true : "none" }}>
-        <Image src={fikstür} />
+        <Image src={fikstür} alt="Fikstür Tasarımı ve İmalatı" />
         <TextArea>
           <Header>Fikstür Tasarımı ve İmalatı</Header>
           <Text>
@@ -125,7 +125,7 @@ const Info = () => {
         </TextArea>
       </Container>
       <Container style={{ display: box === "aparat" ? true : "none" }}>
-        <Image src={aparat} />
+        <Image src={aparat} alt="Aparat Tasarımı ve İmalatı" />
         <TextArea>
           <Header>Aparat Tasarımı ve İmalatı</Header>
           <Text>
@@ -141,7 +141,7 @@ const Info = () => {
         </TextArea>
       </Container>
       <Container style={{ display: box === "yedek" ? true : "none" }}>
-        <Image src={disli} />
+        <Image src={disli} alt="Yedek Parça İmalatı" />
         <TextArea>
           <Header>Yedek Parça İmalatı</Header>
           <Text>
@@ -156,7 +156,7 @@ const Info = () => {
         </TextArea>
       </Container>
       <Container style={{ display: box === "threed" ? true : "none" }}>
-        <Image src={printer} />
+        <Image src={printer} alt="3D Tasarım ve Baskı - Creality K1 Max" />
         <TextArea>
           <Header>3D Tasarım ve Baskı</Header>
           <Text>

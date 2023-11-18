@@ -4,7 +4,7 @@ import cnc from "../images/cnc.png";
 import { Link } from "react-router-dom";
 import { mobile, smallScreenMobile } from "../responsive";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 75vh;
   display: flex;
@@ -103,7 +103,7 @@ const Image = styled.img`
   width: 100%;
   height: 45vh;
 
-  ${mobile({ height: "20vh" })}
+  ${mobile({ height: "15vh" })}
 `;
 
 const AboutUs = () => {
@@ -125,7 +125,12 @@ const AboutUs = () => {
           </Link>
         </Left>
         <Right>
-          <Image src={cnc} />
+          <Image
+            src={cnc}
+            alt="Bursa CNC - Makine Tasarımı ve İmalatı, Kalıp Tasarımı ve İmalatı, Fikstür
+            Tasarımı ve İmalatı, Aparat Tasarımı ve İmalatı, Yedek Parça
+            İmalatı, 3D Tasarım ve Baskı"
+          />
         </Right>
       </AboutArea>
     </Container>

@@ -6,7 +6,7 @@ import foto2 from "../images/banners.jpg";
 import foto3 from "../images/foto.jpg";
 import foto4 from "../images/plan.jpg";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: "auto";
   padding-bottom: 65px;
@@ -142,7 +142,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src={foto1} />
+              <Image src={foto1} alt="Bursa CNC" />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "mission" ? true : "none" }}>
@@ -159,7 +159,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src={foto2} />
+              <Image src={foto2} alt="Bursa Torna" />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "vision" ? true : "none" }}>
@@ -177,7 +177,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src={foto3} />
+              <Image src={foto3} alt="Bursa Freze" />
             </Right>
           </Box>
           <Box style={{ display: selectedBox === "quality" ? true : "none" }}>
@@ -201,7 +201,7 @@ const About = () => {
               </Text>
             </Left>
             <Right>
-              <Image src={foto4} />
+              <Image src={foto4} alt="Bursa Özken Mühendislik" />
             </Right>
           </Box>
         </InfoArea>

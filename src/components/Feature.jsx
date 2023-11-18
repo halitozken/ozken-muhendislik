@@ -5,7 +5,7 @@ import ft2 from "../images/feature-2.png";
 import ft3 from "../images/feature-3.png";
 import { mobile } from "../responsive";
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 40vh;
   background-color: #f8f8f8;
@@ -44,7 +44,7 @@ const Feature = () => {
   return (
     <Container>
       <Box>
-        <Image src={ft1} />
+        <Image src={ft1} alt="Bursa CNC" />
         <Info>
           <Title>Güvenilir</Title>
           <Text>
@@ -54,7 +54,7 @@ const Feature = () => {
         </Info>
       </Box>
       <Box>
-        <Image src={ft2} />
+        <Image src={ft2} alt="Bursa Torna" />
         <Info>
           <Title>En iyi kalite</Title>
           <Text>
@@ -64,7 +64,7 @@ const Feature = () => {
         </Info>
       </Box>
       <Box>
-        <Image src={ft3} />
+        <Image src={ft3} alt="Bursa Freze" />
         <Info>
           <Title>Düşük maliyetli</Title>
           <Text>

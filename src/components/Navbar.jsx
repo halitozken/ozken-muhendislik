@@ -84,7 +84,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <>
+    <header>
       <Nav>
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <Logo src={logo} />
@@ -128,7 +128,7 @@ const Navbar = (props) => {
           </Link>
         </Menu>
       </Nav>
-    </>
+    </header>
   );
 };
 

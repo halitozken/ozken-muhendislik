@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import Headline from "../components/Headline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
@@ -12,11 +11,13 @@ import { FaRegAddressCard, FaStoreAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiDevicePhoneMobile } from "react-icons/hi2";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const Container = styled.div`
   width: auto;
-  height: "auto";
+  height: auto;
   overflow: hidden;
+  position: relative;
 `;
 
 const ContactInfo = styled.div`
@@ -184,17 +185,28 @@ const Contact = () => {
       );
   };
 
-  console.log(name);
   return (
     <BoxContext.Provider value={{ isOpen, setOpen }}>
+      <Helmet>
+        <meta charset="utf-8" />
+        <title>Özken Mühendislik | İletişim</title>
+        <meta
+          name="description"
+          content="Duaçınarı Mh. Uslu Çk. No:1 Yıldırım / Bursa 
+                    Telefon : 224 363 83 15 
+                    GSM 1 : 0546 719 09 87  
+                    GSM 2 : 0532 468 51 33
+                    info@ozkenmuhendislik.com"
+        />
+        <link rel="canonical" href={`https://ozkenmuhendislik.com/iletişim`} />
+      </Helmet>
       <Container>
-  
         <Navbar />
 
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          exit={{ x: window.innerWidth, transition: { duration: 0.6 } }}
+          exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
           <MobileMenu />
           <PageInfo />
@@ -219,7 +231,7 @@ const Contact = () => {
                 <br />
                 <Text>
                   <FaPhoneAlt style={{ paddingRight: "18px" }} />
-                  Telefon : +90 224 363 83 15
+                  Telefon : 0224 363 83 15
                 </Text>
                 <br />
                 <br />
@@ -227,7 +239,7 @@ const Contact = () => {
                   <HiDevicePhoneMobile
                     style={{ paddingRight: "18px", fontSize: "32px" }}
                   />
-                  GSM 1 : +90 546 719 09 87
+                  GSM 1 : 0546 719 09 87
                 </Text>
                 <br />
                 <br />
@@ -235,7 +247,7 @@ const Contact = () => {
                   <HiDevicePhoneMobile
                     style={{ paddingRight: "18px", fontSize: "32px" }}
                   />
-                  GSM 2 : +90 532 468 51 33
+                  GSM 2 : 0532 468 51 33
                 </Text>
                 <br />
                 <br />
