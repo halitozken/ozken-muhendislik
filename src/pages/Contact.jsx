@@ -198,7 +198,7 @@ const Contact = () => {
                     GSM 2 : 0532 468 51 33
                     info@ozkenmuhendislik.com"
         />
-        <link rel="canonical" href={`https://ozkenmuhendislik.com/iletişim`} />
+        <link rel="canonical" href={`https://ozkenmuhendislik.com/iletisim`} />
       </Helmet>
       <Container>
         <Navbar />

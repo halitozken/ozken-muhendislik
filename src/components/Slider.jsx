@@ -226,7 +226,7 @@ export default class SimpleSlider extends Component {
             </InfoArea>
           </Slide>
           <Slide>
-            <Image src={foto1} />
+            <Image src={foto1} alt="Özken Mühendislik" />
             <InfoArea>
               <Title>Özken Mühendislik</Title>
               <Desc>Kalite ile Memnuniyeti Birleştiriyoruz</Desc>
@@ -236,7 +236,7 @@ export default class SimpleSlider extends Component {
             </InfoArea>
           </Slide>
           <Slide>
-            <Image src={foto3} />
+            <Image src={foto3} alt="Özken Mühendislik" />
             <InfoArea>
               <Title>Özken Mühendislik</Title>
               <Desc>Güvenilir Çözümler, Düşük Maliyetler</Desc>
